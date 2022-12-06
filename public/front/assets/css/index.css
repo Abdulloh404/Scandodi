@@ -1,0 +1,14 @@
+.bg-index {
+    background: url("../img/img-bg-index.png");
+    background-position: bottom;
+    background-size: cover;
+    height: 60vh;
+}
+
+.img-content-index {
+    width: 40%;
+}
+
+.img-content-index-2 {
+    width: 100%;
+}

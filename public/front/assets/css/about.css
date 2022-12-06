@@ -1,0 +1,14 @@
+.bg-about {
+    background: linear-gradient(rgba(8, 8, 8, 0), rgba(8, 8, 8, 0.5)), url("../img/img-bg-about.jpg");
+    background-position: bottom;
+    background-size: cover;
+    height: 60vh;
+}
+
+.img-content-about-1 {
+    width: auto;
+}
+
+.img-content-about-2 {
+    width: 100%;
+}

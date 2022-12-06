@@ -1,0 +1,21 @@
+.content-price .card-body {
+    font-size: 14px;
+}
+
+.content-price ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content-price ul li:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    content: "\f00c";
+    padding-right: 5px;
+    color: #000;
+}
+
+a:hover {
+    text-decoration: none;
+}
