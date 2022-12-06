@@ -41,7 +41,7 @@
                     <span>
                         Subscribe to the newsleter
                     </span>
-                    <form action="{{ route('alert') }}" method="POST" enctype="multipart/form-data" class="my-4">
+                    <form action="{{ route('newsleter.insert') }}" method="POST" enctype="multipart/form-data" class="my-4">
                         @csrf
                         <div class="input-group mb-3">
                             <input type="email" name="email" class="form-control" placeholder="Enter your email" required>

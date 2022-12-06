@@ -29,8 +29,10 @@ class DataCommentController extends Controller
                                                         'Businnesstype'=>$business,
                                                         'Comment'=> $comment
         ]);
-        if($isInsertSuccress) return view('contact.index');
-        // else echo '<h1>Insert Has Fail</h1>';
+        if($isInsertSuccress)
+        echo '<script language="javascript">';
+        echo 'alert("Contact successfully sent")';
+        echo '</script>';
     }
 
 

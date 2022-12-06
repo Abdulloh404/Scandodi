@@ -12,16 +12,18 @@ class NewsleterController extends Controller
     public function NewsleterIndex()
     {
         $users = DB::select('select * from newsleter');
-        return view('newsleter.index' ,['data'=>$users]);
+        return view('newsleter.index', ['data' => $users]);
     }
 
     public function NewsleterInsert(Request $request)
     {
         $email = $request->input('email');
 
-        $isInsertSuccress = Newsleter_table::insert(['email'=>$email]);
+        $isInsertSuccress = Newsleter_table::insert(['email' => $email]);
 
-        if($isInsertSuccress) echo '<h1>You has subscibes already</h1>';
-        else echo 'Procees not working';
+        if ($isInsertSuccress)
+        echo '<script language="javascript">';
+        echo 'alert("You has get newsleter successfully ")';
+        echo '</script>';
     }
 }

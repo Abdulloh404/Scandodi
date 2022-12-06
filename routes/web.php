@@ -53,9 +53,6 @@ Route::get('/test', [\App\Http\Controllers\TestController::class, 'showtest']);
 Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'contact']);
 Route::get('/price-product', [\App\Http\Controllers\PriceController::class, 'getUser'])->name('content-price');
 
-//Alert
-Route::post('/alert',[\App\Http\Controllers\AlertController::class, 'AlertIndex'])->name('alert');
-
 //Insert Newsleter
 Route::get('/newsleter',[\App\Http\Controllers\NewsleterController::class, 'NewsleterIndex'])->name('newsleter');
 Route::post('/newsleter-insert',[\App\Http\Controllers\NewsleterController::class, 'NewsleterInsert'])->name('newsleter.insert');
