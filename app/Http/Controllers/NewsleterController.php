@@ -21,6 +21,7 @@ class NewsleterController extends Controller
 
         $isInsertSuccress = Newsleter_table::insert(['email'=>$email]);
 
-        if($isInsertSuccress) return view('/alert');
+        if($isInsertSuccress) echo '<h1>You has subscibes already</h1>';
+        else echo 'Procees not working';
     }
 }
