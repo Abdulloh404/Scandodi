@@ -1,0 +1,79 @@
+.map-container {
+    width: 100%;
+    margin: 0 auto;
+    height: 0;
+    padding-top: 38%;
+    position: relative;
+    display: none;
+}
+
+.static-img {
+    display: block;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+
+/* Hide for small screens */
+
+iframe {
+    width: 100%;
+    height: 100%;
+    /* had to specify height/width */
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.contact-form input {
+    width: 100%;
+    height: 45px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    padding-left: 20px;
+    margin: 15px 0px;
+}
+
+textarea {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    padding-left: 30px;
+    padding-top: 25px;
+    margin: 15px 0px;
+}
+
+.btn-send {
+    color: #ffffff;
+    background: rgba(254, 100, 90, 1);
+    border: 1px solid rgba(254, 100, 90, 1);
+    box-shadow: 0px 10px 15px rgba(1, 115, 153, 0.2);
+    border-radius: 39px;
+    padding: 20px 80px;
+    margin-right: 5px;
+}
+
+.btn-send:hover {
+    color: rgba(254, 120, 90, 1);
+    background: #ffffff;
+    border: 1px solid rgba(254, 120, 90, 1);
+    transition: 0.5s;
+}
+
+
+/* Medium Screens */
+
+@media all and (min-width: 34.375em) {
+    .map-container {
+        display: block;
+    }
+    .static-img {
+        display: none;
+    }
+}

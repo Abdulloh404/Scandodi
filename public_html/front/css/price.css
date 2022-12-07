@@ -1,0 +1,6 @@
+.bg-price {
+    background: linear-gradient(rgba(8, 8, 8, 0), rgba(8, 8, 8, 0.5)), url("../images/img-bg-price.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 60vh;
+}
