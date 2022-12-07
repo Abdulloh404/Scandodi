@@ -25,8 +25,8 @@ class AddLineIdInUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('line_id');
-        });
+        // Schema::table('users', function (Blueprint $table) {
+        //     $table->dropColumn('line_id');
+        // });
     }
 }

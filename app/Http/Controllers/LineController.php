@@ -13,7 +13,7 @@ use App\Providers\AuthServiceProvider;
 use App\Providers\RouteServiceProvider;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-
+use Laravel\Socialite\Facades\Socialite as FacadesSocialite;
 
 
 
@@ -59,35 +59,25 @@ class LineController extends Controller
     }
     public function handleLineCallback()
     {
-        try{
+        try {
             $user = Socialite::driver('line')->user();
-            $finduser = AuthProvider::where('provider', 'line')->where('provider_id', $user->id)->first();
-            if ($finduser) {
-                $user = User::where('id', $finduser->user_id)->first();
-                Auth::login($user);
-                return redirect('/email/verify');
-            } else {
-                $newUser = new User();
-                $newUser->name = $user->name ? $user->name : $user->nickname;
-                $newUser->email = $user->email;
-                $newUser->save();
-                $newUser->assignRole('Member');
+            $finduser = User::where('line_id', $user->id)->first();
+            if($finduser){
+                Auth::login($finduser);
+                return redirect()->intended('/email/verify');
+            }else{
 
-                $new_user = new AuthProvider();
-                $new_user->user_id = $newUser->id;
-                $new_user->provider = 'line';
-                $new_user->provider_id = $user->id;
-                $new_user->save();
+                $newUser = User::updateOrCreate(['email' => $user->email],[
+                        'name' => $user->name,
+                        'line_id'=> $user->id,
+                        'password' => $user->password
+                    ]);
                 Auth::login($newUser);
-                return redirect('/email/verify');
+                return redirect()->intended('/email/verify');
+
             }
         } catch (Exception $e) {
-            Log::error($e->getMessage());
-            echo '<script language="javascript">';
-            echo 'alert("You login has not working")';
-            echo '</script>';
-            // return redirect('/login');
-
+            dd($e->getMessage());
         }
     }
 }
