@@ -80,6 +80,8 @@ Route::prefix('google')->name('google.')->group(function () {
 Route::prefix('line')->name('line.')->group(function () {
     Route::get('/auth/line', [\App\Http\Controllers\LineController::class, 'redirectToLine'])->name('login');
     Route::get('/auth/line/callback', [\App\Http\Controllers\LineController::class, 'handleLineCallback'])->name('callback');
+    // https://www.scandodi.com/line/auth/line/callback
+    // https://scandodi.com/line/handleLineCallback
 });
 
 

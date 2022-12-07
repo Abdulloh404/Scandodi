@@ -7,50 +7,45 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
+use Exception;
 
 class GoogleController extends Controller
 {
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function LoginWithGoogle()
     {
-        $user = Socialite::driver('google')->redirect();
+        return Socialite::driver('google')->redirect();
     }
-
+        /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function callbackFromGoogle()
     {
         try {
-
             $user = Socialite::driver('google')->user();
+            $finduser = User::where('google_id', $user->id)->first();
+            if($finduser){
+                Auth::login($finduser);
+                return redirect()->intended('/email/verify');
+            }else{
 
+                $newUser = User::updateOrCreate(['email' => $user->email],[
+                        'name' => $user->name,
+                        'google_id'=> $user->id,
+                        'password' => $user->password
+                    ]);
+                Auth::login($newUser);
+                return redirect()->intended('/email/verify');
 
-            /**
-             * Check User Email If Already There
-             */
-
-            $is_user = User::where('email', $user->getEmail())->first();
-            if ($is_user) {
-                $saveUser = User::updateOrCreate([
-                    'google_id' => $user->getId(),
-                ], [
-                    'name' => $user->getName(),
-                    'email' => $user->getEmail(),
-                    'password' => Hash::make($user->getName() . '@' . $user->getId())
-                ]);
-            } else {
-                $saveUser = User::updateOrCreate([
-                    'google_id' => $user->getId(),
-
-                ]);
             }
-
-
-            Auth::loginUsingId($saveUser->id);
-
-            return redirect()->route('home');
-
-            // dd($user);
-
-        } catch (\Throwable $th) {
-            throw $th;
+        } catch (Exception $e) {
+            dd($e->getMessage());
         }
     }
 }

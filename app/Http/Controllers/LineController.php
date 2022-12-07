@@ -1,17 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Exception;
 use App\Models\User;
 use Google\Api\AuthProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Providers\AuthServiceProvider;
+use App\Providers\RouteServiceProvider;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
+
+
+
+
+
 
 
 
@@ -35,7 +41,7 @@ class LineController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/email/verify';
 
     /**
      * Create a new controller instance.
@@ -53,13 +59,13 @@ class LineController extends Controller
     }
     public function handleLineCallback()
     {
-        try {
+        try{
             $user = Socialite::driver('line')->user();
             $finduser = AuthProvider::where('provider', 'line')->where('provider_id', $user->id)->first();
             if ($finduser) {
                 $user = User::where('id', $finduser->user_id)->first();
                 Auth::login($user);
-                return redirect('/');
+                return redirect('/email/verify');
             } else {
                 $newUser = new User();
                 $newUser->name = $user->name ? $user->name : $user->nickname;
@@ -73,11 +79,15 @@ class LineController extends Controller
                 $new_user->provider_id = $user->id;
                 $new_user->save();
                 Auth::login($newUser);
-                return redirect('/');
+                return redirect('/email/verify');
             }
         } catch (Exception $e) {
             Log::error($e->getMessage());
-            return redirect('/');
+            echo '<script language="javascript">';
+            echo 'alert("You login has not working")';
+            echo '</script>';
+            // return redirect('/login');
+
         }
     }
 }
