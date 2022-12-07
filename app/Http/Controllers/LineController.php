@@ -16,11 +16,6 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite as FacadesSocialite;
 
 
-
-
-
-
-
 class LineController extends Controller
 {
     /*
@@ -41,17 +36,17 @@ class LineController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/email/verify';
+    // protected $redirectTo = '/email/verify';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('guest')->except('logout');
+    // }
 
     public function redirectToLine()
     {
