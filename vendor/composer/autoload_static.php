@@ -399,7 +399,8 @@ class ComposerStaticInit7ff2a5c6e600d0d4c299d61c703326b0
         ),
         'SocialiteProviders\\Line\\' => 
         array (
-            0 => __DIR__ . '/..' . '/socialiteproviders/line',
+            0 => __DIR__ . '/../..' . '/',
+            1 => __DIR__ . '/..' . '/socialiteproviders/line',
         ),
         'Sabberworm\\CSS\\' => 
         array (
