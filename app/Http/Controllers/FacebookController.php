@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
 
+use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -13,14 +13,19 @@ use Exception;
 class FacebookController extends Controller
 {
     /**
-     * Login Using Facebook
+     * Redirection to facebook login
+     *
+     * @return void
      */
-
     public function LoginUsingFacebook()
     {
         return Socialite::driver('facebook')->redirect();
     }
-
+    /**
+     * Handle API from and Login access
+     *
+     * @return void
+     */
     public function callbackFromFacebook()
     {
         try {
