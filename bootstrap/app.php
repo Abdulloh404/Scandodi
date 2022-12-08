@@ -52,4 +52,11 @@ $app->singleton(
 |
 */
 
+# new storage path
+# base_path() -> returns root path
+$path_storage = base_path() . "/storage";
+
+# override already $app->storagePath using the function
+$app->useStoragePath($path_storage);
+
 return $app;
