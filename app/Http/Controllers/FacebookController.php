@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Laravel\Socialite\Facades\Socialite as FacadesSocialite;
+use Exception;
 
 class FacebookController extends Controller
 {
@@ -24,22 +25,23 @@ class FacebookController extends Controller
     {
         try {
             $user = Socialite::driver('facebook')->user();
+            $finduser = User::where('facebook_id', $user->id)->first();
+            if($finduser){
+                Auth::login($finduser);
+                return redirect()->intended('/email/verify');
+            }else{
 
+                $newUser = User::updateOrCreate(['email' => $user->email],[
+                        'name' => $user->name,
+                        'facebook_id'=> $user->id,
+                        'password' => $user->password
+                    ]);
+                Auth::login($newUser);
+                return redirect()->intended('/email/verify');
 
-            $saveUser = User::updateOrCreate([
-                'facebook_id' => $user->getId(),
-            ], [
-                'name' => $user->getName(),
-                'email' => $user->getEmail()
-                // 'password' => Hash::make($user->getName() . '@' . $user->getId())
-
-            ]);
-            Auth::loginUsingId($saveUser->id);
-            return redirect()->route('index');
-            // dd($user);
-
-        } catch (\Throwable $th) {
-            throw $th;
+            }
+        } catch (Exception $e) {
+            dd($e->getMessage());
         }
     }
 }
