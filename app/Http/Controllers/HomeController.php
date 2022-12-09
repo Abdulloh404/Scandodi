@@ -26,7 +26,8 @@ class HomeController extends Controller
                  alert()->info('Sweet Alert with info.');
                  break;
              case 'success':
-                 alert()->success('Sweet Alert with success.','Welcome to ItSolutionStuff.com')->autoclose(4000);
+                 alert()->success('You information has success already .','STATUS UPDATE')->autoclose(4000);
+                //  alert()->success('You information has success already .','Welcome to ItSolutionStuff.com')->autoclose(4000);
                  break;
              case 'error':
                  alert()->error('Sweet Alert with error.');
