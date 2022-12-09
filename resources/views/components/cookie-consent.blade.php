@@ -2,6 +2,7 @@
     .cookie-contain {
         display: block;
     }
+
     .cookie-consent {
         position: fixed;
         bottom: 8px;
