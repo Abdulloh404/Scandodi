@@ -81,8 +81,8 @@
             "@php artisan key:generate --ansi"
         ],
         "post-install-cmd": [
-            "chgrp -R www-data storage bootstrap/cache",
-            "chmod -R ug+rwx storage bootstrap/cache"
-          ]
+      "chgrp -R www-data storage bootstrap/cache",
+      "chmod -R ug+rwx storage bootstrap/cache"
+    ]
     }
 }

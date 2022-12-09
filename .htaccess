@@ -15,7 +15,7 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ server.php
-    <!-- RewriteRule ^ index.php [L] -->
+
 
     Options -Indexes
 </IfModule>
