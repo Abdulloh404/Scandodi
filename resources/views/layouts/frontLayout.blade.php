@@ -44,7 +44,7 @@
     <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
 
     <!-- Favicon  -->
-    <link rel="icon" href="{{ asset('uploads/' . json_decode(get_settings('site_setting'))->favicon) }}">
+    <link rel="icon" href="{{ asset('uploads/logo.png' . json_decode(get_settings('site_setting'))->favicon) }}">
 
 
 

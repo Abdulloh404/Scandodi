@@ -29,6 +29,9 @@
     <link href="{{ asset('front/css/signIn.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/signUp.css') }}" rel="stylesheet">
 
+    <!-- Favicon  -->
+    <link rel="icon" href="{{ asset('uploads/logo.png' . json_decode(get_settings('site_setting'))->favicon) }}">
+
     @yield('css')
 
 </head>
