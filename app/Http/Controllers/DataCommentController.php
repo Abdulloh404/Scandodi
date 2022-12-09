@@ -30,9 +30,10 @@ class DataCommentController extends Controller
                                                         'Comment'=> $comment
         ]);
         if($isInsertSuccress)
-        echo '<script language="javascript">';
-        echo 'alert("Contact successfully sent")';
-        echo '</script>';
+        return view('notification.my-notification');
+        // echo '<script language="javascript">';
+        // echo 'alert("Contact successfully sent")';
+        // echo '</script>';
     }
 
 

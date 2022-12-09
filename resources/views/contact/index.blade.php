@@ -3,7 +3,6 @@
     @include('components.header')
     @include('components.navbar')
 
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 p-0">
@@ -23,9 +22,11 @@
             <div class="col-xl-8 col-lg-8 col-md-12 col-12 wow fadeInUp" data-wow-delay="0.1s">
                 <h1 class="text-center text-dark">ติดต่อเรา</h1>
 
-
                 <form action="{{ route('insert.comment') }}" method="POST" enctype="multipart/form-data"
                     class="contact-form form-control-submit">
+                    @if (session('message'))
+                    <div class="alert alert-succees">{{ session('message') }}</div>
+                    @endif
                     <div class="row">
                         @csrf
                         <div class=" from-group  col-xl-6 col-lg-6 col-md-6 col-12" required>
@@ -47,6 +48,7 @@
                             </div>
                             <div class="d-flex justify-content-end mt-3 mb-5">
                                 <button class="btn-send" type="submit">Sent</button>
+
                             </div>
                         </div>
                     </div>
