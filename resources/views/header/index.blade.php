@@ -67,10 +67,11 @@
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">
-
     @yield('main-content')
-
 </body>
+
+
+@yield('js')
 <!-- Scripts -->
 <script src="{{ asset('front/js/jquery.min.js') }}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
 <script src="{{ asset('front/js/popper.min.js') }}"></script> <!-- Popper tooltip library for Bootstrap -->
@@ -117,5 +118,41 @@
         })();
     </script>
 @endif
+
+
+{{-- JS Google map --}}
+<script>
+    $(document).ready(function() {
+        buildMap();
+    });
+
+    var sw = document.body.clientWidth,
+        bp = 550,
+        $map = $('.map');
+    var embed = '<iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=thaicc tower&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>';
+
+    function buildMap() {
+        if (sw > bp) { //If Large Screen
+            if ($('.map-container').length < 1) { //If map doesn't already exist
+                buildEmbed();
+            }
+        } else {
+            if ($('.static-img').length < 1) { //If static image doesn't exist
+                buildStatic();
+            }
+        }
+    };
+
+    function buildEmbed() { //Build iframe view
+        $('<div class="map-container"/>').html(embed).prependTo($map);
+    };
+
+    $(window).resize(function() {
+        sw = document.body.clientWidth;
+        buildMap();
+        google.maps.event.trigger(map, "resize");
+    });
+</script>
+{{-- JS Google map --}}
 
 </html>

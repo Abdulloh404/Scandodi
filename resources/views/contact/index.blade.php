@@ -59,3 +59,4 @@
 
     @include('components.footer')
 @endsection
+@section('js')
