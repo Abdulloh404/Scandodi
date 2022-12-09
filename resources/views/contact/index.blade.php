@@ -24,9 +24,6 @@
 
                 <form action="{{ route('insert.comment') }}" method="POST" enctype="multipart/form-data"
                     class="contact-form form-control-submit">
-                    @if (session('message'))
-                    <div class="alert alert-succees">{{ session('message') }}</div>
-                    @endif
                     <div class="row">
                         @csrf
                         <div class=" from-group  col-xl-6 col-lg-6 col-md-6 col-12" required>
@@ -48,7 +45,6 @@
                             </div>
                             <div class="d-flex justify-content-end mt-3 mb-5">
                                 <button class="btn-send" type="submit">Sent</button>
-
                             </div>
                         </div>
                     </div>

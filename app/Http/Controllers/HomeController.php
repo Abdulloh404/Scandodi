@@ -40,5 +40,6 @@ class HomeController extends Controller
                  break;
          }
          return view('notification.my-notification');
+         return redirect()->back();
      }
 }

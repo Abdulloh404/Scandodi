@@ -10,10 +10,8 @@
 </head>
 
 <body>
-
-    <h1 class="text-center">Laravel Alert Notification</h1>
+    {{-- <h1 class="text-center">Laravel Alert Notification</h1> --}}
     @include('sweet::alert')
-
 </body>
 
 </html>
