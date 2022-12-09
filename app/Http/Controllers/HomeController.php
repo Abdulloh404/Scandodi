@@ -26,7 +26,7 @@ class HomeController extends Controller
                  alert()->info('Sweet Alert with info.');
                  break;
              case 'success':
-                 alert()->success('Sweet Alert with success.','Welcome to ItSolutionStuff.com')->autoclose(3500);
+                 alert()->success('Sweet Alert with success.','Welcome to ItSolutionStuff.com')->autoclose(4000);
                  break;
              case 'error':
                  alert()->error('Sweet Alert with error.');
@@ -38,6 +38,6 @@ class HomeController extends Controller
                  # code...
                  break;
          }
-         return view('my-notification');
+         return view('notification.my-notification');
      }
 }
