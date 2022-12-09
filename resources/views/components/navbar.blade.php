@@ -21,7 +21,7 @@
                 </li>
 
                 <li class="nav-item mx-0 mx-xl-4">
-                    <a class="nav-link" href="/price">PRICE</a>
+                    <a class="nav-link" href="/price">PRICING</a>
                 </li>
                 <li class="nav-item mx-0 mx-xl-4">
                     <a class="nav-link" href="/contact">CONTACT</a>
