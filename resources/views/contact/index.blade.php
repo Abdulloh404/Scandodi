@@ -25,7 +25,7 @@
 
 
                 <form action="{{ route('insert.comment') }}" method="POST" enctype="multipart/form-data"
-                    class="contact-form form-control-submit" >
+                    class="contact-form form-control-submit">
                     <div class="row">
                         @csrf
                         <div class=" from-group  col-xl-6 col-lg-6 col-md-6 col-12" required>
