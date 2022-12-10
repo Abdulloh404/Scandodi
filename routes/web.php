@@ -55,8 +55,8 @@ Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'contact
 Route::get('/price-product', [\App\Http\Controllers\PriceController::class, 'getUser'])->name('content-price');
 
 //Insert Newsleter
-Route::get('/newsleter',[\App\Http\Controllers\NewsleterController::class, 'NewsleterIndex'])->name('newsleter');
-Route::post('/newsleter-insert',[\App\Http\Controllers\NewsleterController::class, 'NewsleterInsert'])->name('newsleter.insert');
+Route::get('/newsleter', [\App\Http\Controllers\NewsleterController::class, 'NewsleterIndex'])->name('newsleter');
+Route::post('/newsleter-insert', [\App\Http\Controllers\NewsleterController::class, 'NewsleterInsert'])->name('newsleter.insert');
 
 // Insert Contact Form
 Route::post('/DataInsert', [\App\Http\Controllers\DataCommentController::class, 'DataInsert'])->name('insert.comment');
@@ -67,14 +67,12 @@ Route::get('/comment', [\App\Http\Controllers\CommentController::class, 'showcom
 Route::prefix('facebook')->name('facebook.')->group(function () {
     Route::get('auth', [\App\Http\Controllers\FacebookController::class, 'LoginUsingFacebook'])->name('login');
     Route::get('callback', [\App\Http\Controllers\FacebookController::class, 'callbackFromFacebook'])->name('callback');
-
 });
 
 // Google-Login URL
 Route::prefix('google')->name('google.')->group(function () {
     Route::get('login', [\App\Http\Controllers\GoogleController::class, 'LoginWithGoogle'])->name('login');
     Route::any('callback', [\App\Http\Controllers\GoogleController::class, 'callbackFromGoogle'])->name('callback');
-
 });
 
 // Line-Login URL
@@ -84,7 +82,7 @@ Route::prefix('line')->name('line.')->group(function () {
 });
 
 // Sweet alert
-Route::get('my-notification/{type}',[\App\Http\Controllers\HomeController::class, 'myNotification'])->name('sweet.alert');
+Route::get('my-notification/{type}', [\App\Http\Controllers\HomeController::class, 'myNotification'])->name('sweet.alert');
 
 
 
