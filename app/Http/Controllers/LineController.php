@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Providers\AuthServiceProvider;
 use App\Providers\RouteServiceProvider;
 use Laravel\Socialite\Facades\Socialite;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite as FacadesSocialite;
 
@@ -68,6 +69,7 @@ class LineController extends Controller
                         'password' => $user->password
                     ]);
                 Auth::login($newUser);
+                Alert::success('You has login already','Wellcome');
                 return redirect()->intended('/email/verify');
 
             }

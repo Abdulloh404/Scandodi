@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Events\SendMail;
-use App\Http\Controllers\Controller;
-use App\Models\EmailTemplate;
+use App\Models\Menu;
 use App\Models\Plan;
 use App\Models\User;
-use App\Models\Menu;
+use App\Events\SendMail;
 use App\Models\UserPlan;
 use Illuminate\Http\Request;
+use App\Models\EmailTemplate;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\URL;
-use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthController extends Controller
 {

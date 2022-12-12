@@ -1,14 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+use Exception;
 
-use Laravel\Socialite\Facades\Socialite;
+use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Models\User;
+use Laravel\Socialite\Facades\Socialite;
+use RealRashid\SweetAlert\Facades\Alert;
 use Laravel\Socialite\Facades\Socialite as FacadesSocialite;
-use Exception;
 
 class FacebookController extends Controller
 {
@@ -37,6 +38,7 @@ class FacebookController extends Controller
                         'password' => $user->password
                     ]);
                 Auth::login($newUser);
+                Alert::success('You has login already','Wellcome');
                 return redirect()->intended('/email/verify');
 
             }
