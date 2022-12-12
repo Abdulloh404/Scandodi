@@ -59,7 +59,7 @@ Route::get('/newsleter', [\App\Http\Controllers\NewsleterController::class, 'New
 Route::post('/newsleter-insert', [\App\Http\Controllers\NewsleterController::class, 'NewsleterInsert'])->name('newsleter.insert');
 
 // Insert Contact Form
-Route::post('/DataInsert', [\App\Http\Controllers\DataCommentController::class, 'DataInsert'])->name('insert.comment');
+Route::post('/insert/contactus', [\App\Http\Controllers\DataCommentController::class, 'DataInsert'])->name('insert.comment');
 Route::get('/comment', [\App\Http\Controllers\CommentController::class, 'showcomment']);
 // Route::get('/send-message',[\App\Http\Controllers\ContactController::class, 'sendEmail'])->name('contact.send');
 
@@ -81,8 +81,6 @@ Route::prefix('line')->name('line.')->group(function () {
     Route::get('/auth/line/callback', [\App\Http\Controllers\LineController::class, 'handleLineCallback'])->name('callback');
 });
 
-// Sweet alert
-Route::get('my-notification/{type}', [\App\Http\Controllers\HomeController::class, 'myNotification'])->name('sweet.alert');
 
 
 

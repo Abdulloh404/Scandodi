@@ -48,6 +48,8 @@
                             <input type="email" name="email" class="form-control" placeholder="Enter your email"
                                 required>
                             <button type="submit" class="form-control-submit btn btn-outline-light">Send</button>
+                            {{-- Sweet alert submit --}}
+                            @include('sweetalert::alert')
                         </div>
                     </form>
                 </div>

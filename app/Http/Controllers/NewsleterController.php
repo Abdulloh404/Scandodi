@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\Echo_;
 use App\Models\Newsleter_table;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class NewsleterController extends Controller
 {
@@ -22,8 +23,7 @@ class NewsleterController extends Controller
         $isInsertSuccress = Newsleter_table::insert(['email' => $email]);
 
         if ($isInsertSuccress)
-        echo '<script language="javascript">';
-        echo 'alert("You has get newsleter successfully ")';
-        echo '</script>';
+        Alert::success('STATUS UPDATE', 'Your has get subscribe already!');
+        return back();
     }
 }
