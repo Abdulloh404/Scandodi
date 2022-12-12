@@ -30,10 +30,16 @@ class DataCommentController extends Controller
                                                         'Comment'=> $comment
         ]);
         if($isInsertSuccress)
+<<<<<<< HEAD
         // return redirect('my-notification/success');
         return back();
 
         // echo '<script language="javascript">';
+=======
+        return redirect('my-notification/success');
+        return redirect()->back();
+                // echo '<script language="javascript">';
+>>>>>>> parent of 716d179 (Notify)
         // echo 'alert("Contact successfully sent")';
         // echo '</script>';
     }
