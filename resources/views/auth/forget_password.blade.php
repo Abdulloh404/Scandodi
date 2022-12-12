@@ -2,10 +2,10 @@
 @section('main-content')
 @include('components.navbar')
 @include('components.header')
-    <div class="authincation h-100">
-        <div class="container h-100">
-            <div class="row justify-content-center  align-items-center">
-                <div class="col-md-6">
+
+        <div class="container" style="display: flexbox;">
+            <div class="row justify-content-center  align-items-center" style="height: 100vh">
+                <div class="col-md-5">
                     <div class="authincation-content">
                         <div class="row no-gutters">
                             <div class="col-xl-12">
@@ -30,8 +30,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
-@include('components.footer')
 
 @endsection

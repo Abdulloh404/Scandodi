@@ -36,7 +36,7 @@
 
 </head>
 
-<body class="h-auto" style="background: linear-gradient(180deg, #F54D6F 0%, #FE635B 43.23%, #EA4A7A 100%); ">
+<body class="h-auto  " style="background: linear-gradient(180deg, #F54D6F 0%, #FE635B 43.23%, #EA4A7A 100%); ">
     @yield('main-content')
 
     <script src="{{ asset('front/js/jquery.min.js') }}"></script>

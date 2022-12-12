@@ -2,7 +2,10 @@
 
 @include('components.navbar')
 @include('components.header')
-<br><br><br><br>
+<br>
+<br>
+<br>
+<br>
 @section('title', trans('layout.registration'))
 
 @section('main-content')
