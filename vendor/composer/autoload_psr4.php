@@ -50,6 +50,7 @@ return array(
     'SocialiteProviders\\Line\\' => array($baseDir . '/', $vendorDir . '/socialiteproviders/line'),
     'Sabberworm\\CSS\\' => array($vendorDir . '/sabberworm/php-css-parser/src'),
     'Rize\\' => array($vendorDir . '/rize/uri-template/src/Rize'),
+    'RealRashid\\SweetAlert\\' => array($vendorDir . '/realrashid/sweet-alert/src'),
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
     'Ramsey\\Collection\\' => array($vendorDir . '/ramsey/collection/src'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src'),

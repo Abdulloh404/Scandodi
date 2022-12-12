@@ -161,7 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class, //Sweet alert
 
         /*
@@ -233,8 +233,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
-        'Alert' => UxWeb\SweetAlert\SweetAlert::class,  //Sweet alert
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
 
     ],
 

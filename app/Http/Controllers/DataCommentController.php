@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DataComment_table;
+use RealRashid\SweetAlert\Facades\Alert;
+use RealRashid\SweetAlert\SweetAlertServiceProvider;
 
 class DataCommentController extends Controller
 {
@@ -22,24 +24,16 @@ class DataCommentController extends Controller
         $business = $request->input('Business');
         $comment = $request->input('Comment');
 
-        $isInsertSuccress = DataComment_table::insert([ 'name'=>$name,
-                                                        'Email'=>$email,
-                                                        'Company'=>$company,
-                                                        'Tell'=>$phone,
-                                                        'Businnesstype'=>$business,
-                                                        'Comment'=> $comment
+        $isInsertSuccress = DataComment_table::insert([
+            'name' => $name,
+            'Email' => $email,
+            'Company' => $company,
+            'Tell' => $phone,
+            'Businnesstype' => $business,
+            'Comment' => $comment
         ]);
-        if($isInsertSuccress)
-        // return back()->with('success','Item created successfully!');
-        return redirect('my-notification/success');
-        // echo '<script language="javascript">';
-        // return redirect('my-notification/success');
-        // return redirect()->back();
-                // echo '<script language="javascript">';
-        // echo 'alert("Contact successfully sent")';
-        // echo '</script>';
+        if ($isInsertSuccress)
+        Alert::success('STATUS UPDATE', 'Your comment has successfully!');
+        return back();
     }
-
-
-
 }

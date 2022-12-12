@@ -22,9 +22,6 @@
             <div class="col-xl-8 col-lg-8 col-md-12 col-12 wow fadeInUp" data-wow-delay="0.1s">
                 <h1 class="text-center text-dark">ติดต่อเรา</h1>
 
-                @if ($message = Session::get('success'))
-                        @include('sweet::alert')
-                @endif
                 <form action="{{ route('insert.comment') }}" method="POST" enctype="multipart/form-data"
                     class="contact-form form-control-submit">
                     <div class="row">
@@ -48,6 +45,8 @@
                             </div>
                             <div class="d-flex justify-content-end mt-3 mb-5">
                                 <button class="btn-send" type="submit">Sent</button>
+                                {{-- Sweet alert submit --}}
+                                @include('sweetalert::alert')
                             </div>
                         </div>
                     </div>
