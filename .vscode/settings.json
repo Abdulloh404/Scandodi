@@ -1,5 +1,7 @@
 {
     "git.ignoreLimitWarning": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "files.autoSave": "onFocusChange",
+    "editor.formatOnSave": false
 }
