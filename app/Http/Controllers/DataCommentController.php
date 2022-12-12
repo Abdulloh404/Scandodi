@@ -33,8 +33,8 @@ class DataCommentController extends Controller
         // return back()->with('success','Item created successfully!');
         return redirect('my-notification/success');
         // echo '<script language="javascript">';
-        return redirect('my-notification/success');
-        return redirect()->back();
+        // return redirect('my-notification/success');
+        // return redirect()->back();
                 // echo '<script language="javascript">';
         // echo 'alert("Contact successfully sent")';
         // echo '</script>';
