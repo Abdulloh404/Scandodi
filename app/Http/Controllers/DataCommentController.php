@@ -30,8 +30,9 @@ class DataCommentController extends Controller
                                                         'Comment'=> $comment
         ]);
         if($isInsertSuccress)
-        // return back()->with('success','Item created successfully!');
-        return redirect('my-notification/success');
+        // return redirect('my-notification/success');
+        return back();
+
         // echo '<script language="javascript">';
         // echo 'alert("Contact successfully sent")';
         // echo '</script>';
