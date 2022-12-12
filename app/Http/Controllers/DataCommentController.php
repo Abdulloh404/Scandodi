@@ -30,9 +30,8 @@ class DataCommentController extends Controller
                                                         'Comment'=> $comment
         ]);
         if($isInsertSuccress)
-        // return redirect('my-notification/success');
-        return back();
-
+        // return back()->with('success','Item created successfully!');
+        return redirect('my-notification/success');
         // echo '<script language="javascript">';
         return redirect('my-notification/success');
         return redirect()->back();
