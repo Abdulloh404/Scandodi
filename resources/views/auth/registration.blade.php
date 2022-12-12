@@ -44,7 +44,7 @@
 
                                             <input type="email" id="email" class="form-control"
                                                 value="{{ old('email') }}" placeholder="{{ trans('auth.email_ex') }}"
-                                                name="email" onkeydown="function validation()" >
+                                                name="email" onkeydown="function validation()">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" id="password" class="form-control" value=""
