@@ -59,20 +59,12 @@
     <link href="{{ asset('front/css/blog-detail.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/about.css') }}" rel="stylesheet">
 
-<<<<<<< HEAD
     {{-- Notify --}}
     <title>Laravel Sweet Alert Notification</title>
     <link rel="stylesheet" href="http://demo.itsolutionstuff.com/plugin/bootstrap-3.min.css">
     <script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 716d179 (Notify)
-=======
->>>>>>> parent of 97905e7 (Sweet.alert)
     <!-- Favicon  -->
     <link rel="icon" href="{{ asset('uploads/logo.png' . json_decode(get_settings('site_setting'))->favicon) }}">
 
