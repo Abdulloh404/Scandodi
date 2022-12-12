@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Exception;
 use App\Models\User;
 use Google\Api\AuthProvider;
@@ -58,23 +59,25 @@ class LineController extends Controller
         try {
             $user = Socialite::driver('line')->user();
             $finduser = User::where('line_id', $user->id)->first();
-            if($finduser){
+            if ($finduser) {
                 Auth::login($finduser);
-                return redirect()->intended('/email/verify');
-            }else{
 
-                $newUser = User::updateOrCreate(['email' => $user->email],[
-                        'name' => $user->name,
-                        'line_id'=> $user->id,
-                        'password' => $user->password
-                    ]);
+                return redirect()->intended('/email/verify');
+            } else {
+
+                $newUser = User::updateOrCreate(['email' => $user->email], [
+                    'name' => $user->name,
+                    'line_id' => $user->id,
+                    'password' => $user->password
+                ]);
                 Auth::login($newUser);
-                Alert::success('You has login already','Wellcome');
+
                 return redirect()->intended('/email/verify');
 
             }
         } catch (Exception $e) {
             dd($e->getMessage());
+            Alert::success('You has login already', 'Wellcome');
         }
     }
 }

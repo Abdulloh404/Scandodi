@@ -28,7 +28,7 @@
     <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/signIn.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/signUp.css') }}" rel="stylesheet">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <!-- Favicon  -->
     <link rel="icon" href="{{ asset('uploads/logo.png' . json_decode(get_settings('site_setting'))->favicon) }}">
 

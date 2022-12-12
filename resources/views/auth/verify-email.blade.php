@@ -12,6 +12,12 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('vendor/toastr/css/toastr.min.css') }}">
+    {{-- Notify --}}
+    <title>Laravel Sweet Alert Notification</title>
+    <link rel="stylesheet" href="http://demo.itsolutionstuff.com/plugin/bootstrap-3.min.css">
+    <script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
 </head>
 
@@ -25,7 +31,8 @@
             <span class="brand-title header-logo">{{ json_decode(get_settings('site_setting'))->name }}</span>
         </a>
     </div>
-
+    {{-- Sweet alert submit --}}
+    @include('sweetalert::alert')
 
     <div class="header">
         <div class="header-content">
@@ -164,8 +171,7 @@
                                             <button type="submit"
                                                 class="btn btn-primary btn-block">{{ trans('layout.resend') }}</button>
                                         </div>
-                                        {{-- Sweet alert submit --}}
-                                        @include('sweetalert::alert')
+
                                     </form>
                                 </div>
                             </div>

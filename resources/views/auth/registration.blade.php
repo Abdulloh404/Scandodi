@@ -2,6 +2,7 @@
 @section('main-content')
     @include('components.navbar')
     @include('components.header')
+    @include('sweetalert::alert')
     <div class="container" style="display: flexbox;">
         <div class="row justify-content-center  align-items-center" style="height: 125vh">
             <div class="col-md-5 p-10 mx-auto bg-white rounded-5" style="padding:10px;">
