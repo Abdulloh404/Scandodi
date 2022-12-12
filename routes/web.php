@@ -59,7 +59,7 @@ Route::get('/newsleter', [\App\Http\Controllers\NewsleterController::class, 'New
 Route::post('/newsleter-insert', [\App\Http\Controllers\NewsleterController::class, 'NewsleterInsert'])->name('newsleter.insert');
 
 // Insert Contact Form
-Route::post('/DataInsert', [\App\Http\Controllers\DataCommentController::class, 'DataInsert'])->name('insert.comment');
+Route::post('/innsert/comment', [\App\Http\Controllers\DataCommentController::class, 'DataInsert'])->name('insert.comment');
 Route::get('/comment', [\App\Http\Controllers\CommentController::class, 'showcomment']);
 // Route::get('/send-message',[\App\Http\Controllers\ContactController::class, 'sendEmail'])->name('contact.send');
 
