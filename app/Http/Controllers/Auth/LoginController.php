@@ -14,7 +14,7 @@ class LoginController extends Controller
         $authUser = auth()->user();
 
         auth()->logout();
-        Alert::success('You logout already','Comeback as you please');
+        toast('You has Logout already!','success');
         return redirect()->route('login');
     }
 }

@@ -31,7 +31,7 @@ class AuthController extends Controller
             'password' => 'required|min:5',
         ]);
 
-        if(json_decode(get_settings('site_setting')) && isset(json_decode(get_settings('site_setting'))->recaptcha_secret_key)) {
+        if (json_decode(get_settings('site_setting')) && isset(json_decode(get_settings('site_setting'))->recaptcha_secret_key)) {
             $data = array(
                 'secret' => json_decode(get_settings('site_setting'))->recaptcha_secret_key,
                 'response' => $request->grecaptcha_response,
@@ -47,7 +47,7 @@ class AuthController extends Controller
             $captcha = json_decode($res);
 
             if ($captcha->success == false) {
-                return redirect()->back()->withErrors(['failed'=>'Invalid Captcha, You are a freakin robot!'])->withInput();
+                return redirect()->back()->withErrors(['failed' => 'Invalid Captcha, You are a freakin robot!'])->withInput();
             }
         }
 
@@ -69,7 +69,6 @@ class AuthController extends Controller
             $user->assignRole('customer');
         } else {
             $user->assignRole('restaurant_owner');
-
         }
 
         if ($user->type = 'customer' && $request->slug && $request->restaurant) {
@@ -82,15 +81,15 @@ class AuthController extends Controller
         }
 
         $plan = Plan::where('recurring_type', 'onetime')->first();
-        if (isset($request->type) && $request->type == 'customer'){
+        if (isset($request->type) && $request->type == 'customer') {
             auth()->login($user);
             $modules = modules_status('MultiRestaurant');
-            if ($user->type = 'customer' && $modules){
+            if ($user->type = 'customer' && $modules) {
                 return redirect()->route('multirestaurant::index');
-            }else{
+            } else {
                 return redirect()->route('dashboard')->with('success', trans('layout.message.registration_success'));
             }
-        }else{
+        } else {
             $userPlan = new UserPlan();
             $userPlan->user_id = $user->id;
             $userPlan->plan_id = $plan->id;
@@ -104,24 +103,23 @@ class AuthController extends Controller
         try {
             $emailTemplate = EmailTemplate::where('type', 'registration')->first();
             if ($emailTemplate) {
-                $arr=['id' => $user->id, 'hash' => sha1($user->email)];
-                if(isset($request->plan) && $request->plan!=1){
-                    $arr['plan']=$request->plan;
+                $arr = ['id' => $user->id, 'hash' => sha1($user->email)];
+                if (isset($request->plan) && $request->plan != 1) {
+                    $arr['plan'] = $request->plan;
                 }
 
 
                 $route = URL::temporarySignedRoute('verification.verify', now()->addHours(4), $arr);
                 $regTemp = str_replace('{customer_name}', $user->name, $emailTemplate->body);
-                $regTemp = str_replace('{click_here}', "<a href=" . $route . ">".trans('layout.click_here')."</a>", $regTemp);
+                $regTemp = str_replace('{click_here}', "<a href=" . $route . ">" . trans('layout.click_here') . "</a>", $regTemp);
                 SendMail::dispatch($user->email, $emailTemplate->subject, $regTemp);
             }
         } catch (\Exception $ex) {
             Log::error($ex->getMessage());
         }
         auth()->login($user);
-        Alert::success('You login already','Comeback as you please');
+        Alert::success('You login already', 'Comeback as you please');
         return redirect()->route('dashboard')->with('success', trans('layout.message.registration_success'));
-
     }
 
     public function login()
@@ -135,27 +133,28 @@ class AuthController extends Controller
         $request->validate([
             'email' => 'required',
             'password' => 'required'
+
         ]);
 
-        // if(json_decode(get_settings('site_setting')) && isset(json_decode(get_settings('site_setting'))->recaptcha_secret_key)) {
-        //     $data = array(
-        //         'secret' => json_decode(get_settings('site_setting'))->recaptcha_secret_key,
-        //         'response' => $request->grecaptcha_response,
-        //     );
-        //     $verify = curl_init();
-        //     curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
-        //     curl_setopt($verify, CURLOPT_POST, true);
-        //     curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
-        //     curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
-        //     curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
-        //     $res = curl_exec($verify);
+        if (json_decode(get_settings('site_setting')) && isset(json_decode(get_settings('site_setting'))->recaptcha_secret_key)) {
+            $data = array(
+                'secret' => json_decode(get_settings('site_setting'))->recaptcha_secret_key,
+                'response' => $request->grecaptcha_response,
+            );
+            $verify = curl_init();
+            curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+            curl_setopt($verify, CURLOPT_POST, true);
+            curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
+            curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
+            curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+            $res = curl_exec($verify);
 
-        //     $captcha = json_decode($res);
+            $captcha = json_decode($res);
 
-        //     if ($captcha->success == false) {
-        //         return redirect()->back()->withErrors(['failed'=>'Invalid Captcha, You are a freakin robot!'])->withInput();
-        //     }
-        // }
+            if ($captcha->success == false) {
+                return redirect()->back()->withErrors(['failed' => 'Invalid Captcha, You are a freakin robot!'])->withInput();
+            }
+        }
 
         $remember = isset($request->remember_me) ? true : false;
 
@@ -164,36 +163,29 @@ class AuthController extends Controller
 
 
         if (auth()->attempt($credentials, $remember)) {
-                if(auth()->user()->type=='restaurant_owner' && auth()->user()->status=='banned'){
-                    auth()->logout();
-                    return redirect()->back()->withErrors(['fail' => trans('auth.banned')]);
-                }
+            if (auth()->user()->type == 'restaurant_owner' && auth()->user()->status == 'banned') {
+                auth()->logout();
+
+                return redirect()->back()->withErrors(['fail' => trans('auth.banned')]);
+            }
             $modules = modules_status('MultiRestaurant');
-            if(auth()->user()->type=='customer'){
-                if ($modules){
+            if (auth()->user()->type == 'customer') {
+                if ($modules) {
                     return redirect()->route('multirestaurant::index');
-                }else{
+                } else {
                     return redirect()->route('order.index');
                 }
-
             }
-            if (auth()->user()->type=='admin') {
+            if (auth()->user()->type == 'admin') {
                 $role = Role::findOrCreate('admin');
 
                 auth()->user()->assignRole($role);
             }
             return redirect()->intended('dashboard');
-
         } else
-            return
-            
-            redirect()->back()->withErrors(['fail' => trans('auth.failed')]);
-
+            toast('You has Logout already!', 'success');
+        return redirect()->back()->withErrors(['fail' => trans('auth.failed')]);
     }
-
-
-
-///////////////////////////////////////////// Reset password//////////////////////////////////////////
 
     public function forgetPassword()
     {
@@ -216,15 +208,14 @@ class AuthController extends Controller
             if ($emailTemplate) {
                 $route = URL::temporarySignedRoute('password.reset.form', now()->addHours(1), ['token' => $token]);
                 $temp = str_replace('{customer_name}', $user->name, $emailTemplate->body);
-                $temp = str_replace('{reset_url}', "<a href=" . $route . ">".trans('layout.click_here')."</a>", $temp);
+                $temp = str_replace('{reset_url}', "<a href=" . $route . ">" . trans('layout.click_here') . "</a>", $temp);
                 SendMail::dispatch($user->email, $emailTemplate->subject, $temp);
             }
         } catch (\Exception $ex) {
             Log::error($ex->getMessage());
         }
-        Alert::success('You logIn already','Comeback as you please');
+        Alert::success('You logIn already', 'Comeback as you please');
         return redirect()->route('login')->with('success', trans('layout.message.reset_link_send'));
-
     }
 
     public function passwordResetForm($token)
@@ -258,10 +249,7 @@ class AuthController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
         DB::table('password_resets')->where('token', $request->token)->delete();
-        Alert::success('You logout already','Comeback as you please');
+        Alert::success('You logout already', 'Comeback as you please');
         return redirect()->route('login')->with('success', trans('layout.message.reset_successful'));
-
     }
 }
-
-
