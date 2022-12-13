@@ -6,10 +6,10 @@
             <div class="h1 text-center fw-bold p-3">
                 Features
             </div>
-            <div class="col-lg-4 col-md-6 col-12 sub-items1">
+            <div class="col-lg-4 col-md-6 col-6 sub-items1">
                 <!-- <div class="img-content-features ">
                 </div> -->
-                <div class="text-center py-5 px-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="text-center py-4 px-3 wow fadeIn" data-wow-delay="0.5s">
                     <i class="fas fa-mobile-alt mb-4" style="font-size: 60px;color:#FE645A;"></i>
                     <div class="h5">
                         MOBILE PAYMENT
@@ -19,10 +19,10 @@
                     </span>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-12 sub-items1">
+            <div class="col-lg-4 col-md-6 col-6 sub-items1">
                 <!-- <div class="img-content-features ">
                 </div> -->
-                <div class="text-center py-5 px-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="text-center py-4 px-3 wow fadeIn" data-wow-delay="0.5s">
                     <i class="fas fa-laptop mb-4" style="font-size: 60px;color:#FE645A;"></i>
                     <div class="h5">
                         INTEGRATIONS
@@ -32,10 +32,10 @@
                     </span>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-12 sub-items1">
+            <div class="col-lg-4 col-md-6 col-6 sub-items1">
                 <!-- <div class="img-content-features ">
                 </div> -->
-                <div class="text-center py-5 px-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="text-center py-4 px-3 wow fadeIn" data-wow-delay="0.5s">
                     <i class="far fa-comment mb-4" style="font-size: 60px;color:#FE645A;"></i>
                     <div class="h5">
                         SMART RECOMMENDATIONS
@@ -45,10 +45,10 @@
                     </span>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-12 sub-items2">
+            <div class="col-lg-4 col-md-6 col-6 sub-items2">
                 <!-- <div class="img-content-features ">
                 </div> -->
-                <div class="text-center py-5 px-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="text-center py-4 px-3 wow fadeIn" data-wow-delay="0.5s">
                     <i class="fas fa-info-circle mb-4" style="font-size: 60px;color:#FE645A;"></i>
                     <div class="h5">
                         24/7 SUPPORT
@@ -58,10 +58,10 @@
                     </span>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-12 sub-items2">
+            <div class="col-lg-4 col-md-6 col-6 sub-items2">
                 <!-- <div class="img-content-features ">
                 </div> -->
-                <div class="text-center py-5 px-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="text-center py-4 px-3 wow fadeIn" data-wow-delay="0.5s">
                     <i class="fas fa-clipboard mb-4" style="font-size: 60px;color:#FE645A;"></i>
                     <div class="h5">
                         WEEKLY ANALYSIS
@@ -71,10 +71,10 @@
                     </span>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-12 sub-items2">
+            <div class="col-lg-4 col-md-6 col-6 sub-items2">
                 <!-- <div class="img-content-features ">
                 </div> -->
-                <div class="text-center py-5 px-3 wow fadeIn" data-wow-delay="0.5s">
+                <div class="text-center py-4 px-3 wow fadeIn" data-wow-delay="0.5s">
                     <i class="fas fa-shapes mb-4" style="font-size: 60px;color:#FE645A;"></i>
                     <div class="h5">
                         CUSTOMIZED BRANDING

@@ -18,6 +18,8 @@
         background: #fff;
         z-index: 120;
         border-radius: 3px;
+        border: 1px solid;
+        filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     }
 
     .allow-button {

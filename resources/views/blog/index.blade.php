@@ -14,7 +14,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="card shadow-sm bg-body rounded-3 border-0" style="width: 100%;">
                     <img src="uploads/img-price-1.png" class="card-img-top" alt="">
                     <div class="card-body">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="card shadow-sm bg-body rounded-3 border-0" style="width: 100%;">
                     <img src="uploads/img-price-1.png" class="card-img-top" alt="">
                     <div class="card-body">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="card shadow-sm bg-body rounded-3 border-0" style="width: 100%;">
                     <img src="uploads/img-price-1.png" class="card-img-top" alt="">
                     <div class="card-body">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="card shadow-sm bg-body rounded-3 border-0" style="width: 100%;">
                     <img src="uploads/img-price-1.png" class="card-img-top" alt="">
                     <div class="card-body">
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="card shadow-sm bg-body rounded-3 border-0" style="width: 100%;">
                     <img src="uploads/img-price-1.png" class="card-img-top" alt="">
                     <div class="card-body">
@@ -69,7 +69,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="card shadow-sm bg-body rounded-3 border-0" style="width: 100%;">
                     <img src="uploads/img-price-1.png" class="card-img-top" alt="">
                     <div class="card-body">
@@ -80,7 +80,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="card shadow-sm bg-body rounded-3 border-0" style="width: 100%;">
                     <img src="uploads/img-price-1.png" class="card-img-top" alt="">
                     <div class="card-body">
@@ -91,7 +91,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="card shadow-sm bg-body rounded-3 border-0" style="width: 100%;">
                     <img src="uploads/img-price-1.png" class="card-img-top" alt="">
                     <div class="card-body">
@@ -102,7 +102,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="card shadow-sm bg-body rounded-3 border-0" style="width: 100%;">
                     <img src="uploads/img-price-1.png" class="card-img-top" alt="">
                     <div class="card-body">
@@ -113,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="card shadow-sm bg-body rounded-3 border-0" style="width: 100%;">
                     <img src="uploads/img-price-1.png" class="card-img-top" alt="">
                     <div class="card-body">
@@ -124,7 +124,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="card shadow-sm bg-body rounded-3 border-0" style="width: 100%;">
                     <img src="uploads/img-price-1.png" class="card-img-top" alt="">
                     <div class="card-body">
@@ -135,7 +135,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4 wow fadeInUp" data-wow-delay="0.7s">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-12 mb-4 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="card shadow-sm bg-body rounded-3 border-0" style="width: 100%;">
                     <img src="uploads/img-price-1.png" class="card-img-top" alt="">
                     <div class="card-body">

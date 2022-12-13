@@ -1,14 +1,14 @@
-<link rel="stylesheet" href="../front/css/content-1.css">
+<link rel="stylesheet" href="../front/css/content-some-numbers-that-matter.css">
 
-<div class="container-fluid">
-    <div class="container p-xl-5 p-lg-5 p-md-5 p-4 shadow-lg mt-xl-0 mt-lg-0 mt-md-0 mt-5 mb-5 bg-body wow fadeInUp" data-wow-delay="0.2s">
+<div class="container-fluid contant-1">
+    <div class="container p-xl-5 p-lg-5 p-md-5 p-4 shadow-lg mt-xl-0 mt-lg-0 mt-md-0 mt-0 mb-5 bg-body wow fadeInUp" data-wow-delay="0.2s">
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-12 col my-xl-auto my-lg-auto mb-md-5 mb-3 wow fadeIn" data-wow-delay="0.8s">
                 <div class="mb-3">
                     <h1><b>Some numbers that matter</b></h1>
                 </div>
                 <div class="mb-5">
-                    <p>There is a reason why we are the best in the market.</p>
+                    <p class="m-0">There is a reason why we are the best in the market.</p>
                 </div>
                 <div class="row g-5">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-6">

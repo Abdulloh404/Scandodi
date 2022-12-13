@@ -41,9 +41,9 @@
                         <div class=" from-group  col-xl-12 col-lg-12 col-md-12 col-12">
                             <div class=" from-group  d-grid">
                                 <input type="text" placeholder="Business" name="Business">
-                                <textarea name="Comment" id="" cols="5" rows="10" placeholder="Comment" required></textarea>
+                                <textarea name="Comment" id="" cols="5" rows="10" class="my-3" placeholder="Comment" required></textarea>
                             </div>
-                            <div class="d-flex justify-content-end mt-3 mb-5">
+                            <div class="d-flex justify-content-center mt-3 mb-5">
                                 <button class="btn-send" type="submit">Sent</button>
                                 {{-- Sweet alert submit --}}
                                 @include('sweetalert::alert')

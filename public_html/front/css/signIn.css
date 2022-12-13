@@ -1,3 +1,38 @@
 body {
     background-color: #F5F5F5;
 }
+
+.authincation-content {
+    box-shadow: none;
+}
+
+.height-page-login {
+    height: 110vh;
+}
+
+@media screen and (max-width: 1200px) {
+    .height-page-login {
+        height: 120vh;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .height-page-login {
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .height-page-login {
+        height: 100vh;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .height-page-login {
+        height: 100vh;
+    }
+    .container {
+        background-color: aliceblue;
+    }
+}
