@@ -36,11 +36,11 @@
     @media screen and (max-width: 576px) {
         .cookie-consent {
             left: unset;
-            width: 100%;
+            width: 98%;
         }
     }
 </style>
-<div id="cookie-contain">
+<div id="cookie-contain" class="d-flex justify-content-center">
     <div class="cookie-consent wow fadeInLeft" data-wow-delay="0.2s">
         <span>Scandodi websites stores data such as cookies to enable essential site functionality, as
             well as marketing, personalization, and analytics. You may change your settings at any time

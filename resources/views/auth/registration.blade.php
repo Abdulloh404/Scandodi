@@ -13,7 +13,7 @@
                                     class="text-red font-weight-bolder">{{ trans('Database is being refreshed every 2 hours') }}</span>
                             </div>
                             <div class="auth-form bg-white rounded-5 ">
-                                <h4 class="text-center mb-4">Setup Your Menu in Minutes</h4>
+                                <h4 class="text-center mb-2">Setup Your Menu in Minutes</h4>
                                 <p class="text-center mb-4" style="color:rgb(115, 115, 115);">No commitments. Try for
                                     free now and pay later. No credit card required.</p>
 
