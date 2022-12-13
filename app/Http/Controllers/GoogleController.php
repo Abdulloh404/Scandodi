@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
-use Exception;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class GoogleController extends Controller
 {
@@ -41,6 +42,7 @@ class GoogleController extends Controller
                         'password' => $user->password
                     ]);
                 Auth::login($newUser);
+                Alert::success('You has login already','Wellcome');
                 return redirect()->intended('/email/verify');
 
             }

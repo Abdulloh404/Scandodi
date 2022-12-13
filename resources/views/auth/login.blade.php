@@ -1,14 +1,13 @@
 @extends('layouts.auth')
-
-@include('components.navbar')
-@include('components.header')
-
 @section('main-content')
-@section('main-content')
+    @include('components.navbar')
+    @include('components.header')
 
+    {{-- Sweet alert submit --}}
+    @include('sweetalert::alert')
     <div class="container" style="display: flexbox;">
         <div class="row justify-content-center  align-items-center" style="height: 123vh">
-            <div class="col-md-6  mx-auto bg-white rounded-5" style="padding:10px;">
+            <div class="col-md-5 p-10 mx-auto bg-white rounded-5" style="padding:10px;">
                 <div class="authincation-content">
                     <div class="row no-gutters">
                         <div class="col-xl-12">
@@ -119,4 +118,3 @@
             </div>
         </div>
     @endsection
-

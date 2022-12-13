@@ -2,7 +2,6 @@
 @section('main-content')
 @include('components.navbar')
 @include('components.header')
-
         <div class="container" style="display: flexbox;">
             <div class="row justify-content-center  align-items-center" style="height: 100vh">
                 <div class="col-md-5">

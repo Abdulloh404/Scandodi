@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginController extends Controller
 {
@@ -13,7 +14,7 @@ class LoginController extends Controller
         $authUser = auth()->user();
 
         auth()->logout();
-
+        Alert::success('You logout already','Comeback as you please');
         return redirect()->route('login');
     }
 }
