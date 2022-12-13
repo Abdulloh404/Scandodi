@@ -42,7 +42,9 @@
     <script src="{{ asset('front/js/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/toastr/js/toastr.min.js') }}"></script>
     @yield('js')
-    @php $allErrors=''; @endphp
+
+
+    {{-- @php $allErrors=''; @endphp
     @if (isset($errors) && count($errors) > 0)
         @foreach ($errors->all() as $error)
             @php $allErrors.=$error.'<br/>' @endphp
@@ -80,7 +82,7 @@
                 });
             });
         </script>
-    @endif
+    @endif --}}
 
 </body>
 

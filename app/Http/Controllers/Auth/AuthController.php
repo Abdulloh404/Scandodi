@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
+use RealRashid\SweetAlert\ToSweetAlert;
 
 class AuthController extends Controller
 {
@@ -31,30 +32,29 @@ class AuthController extends Controller
             'password' => 'required|min:5',
         ]);
 
-        if (json_decode(get_settings('site_setting')) && isset(json_decode(get_settings('site_setting'))->recaptcha_secret_key)) {
-            $data = array(
-                'secret' => json_decode(get_settings('site_setting'))->recaptcha_secret_key,
-                'response' => $request->grecaptcha_response,
-            );
-            $verify = curl_init();
-            curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
-            curl_setopt($verify, CURLOPT_POST, true);
-            curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
-            curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
-            $res = curl_exec($verify);
+        // if (json_decode(get_settings('site_setting')) && isset(json_decode(get_settings('site_setting'))->recaptcha_secret_key)) {
+        //     $data = array(
+        //         'secret' => json_decode(get_settings('site_setting'))->recaptcha_secret_key,
+        //         'response' => $request->grecaptcha_response,
+        //     );
+        //     $verify = curl_init();
+        //     curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+        //     curl_setopt($verify, CURLOPT_POST, true);
+        //     curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
+        //     curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
+        //     curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+        //     $res = curl_exec($verify);
 
-            $captcha = json_decode($res);
+        //     $captcha = json_decode($res);
 
-            if ($captcha->success == false) {
-                return redirect()->back()->withErrors(['failed' => 'Invalid Captcha, You are a freakin robot!'])->withInput();
-            }
-        }
+        //     if ($captcha->success == false) {
+        //         return redirect()->back()->withErrors(['failed' => 'Invalid Captcha, You are a freakin robot!'])->withInput();
+        //     }
+        // }
 
         $user = new  User();
         $user->name = $request->name;
         $user->email = $request->email;
-
 
         if (isset($request->type) && $request->type == 'customer') {
             $user->type = 'customer';
@@ -87,7 +87,7 @@ class AuthController extends Controller
             if ($user->type = 'customer' && $modules) {
                 return redirect()->route('multirestaurant::index');
             } else {
-                return redirect()->route('dashboard')->with('success', trans('layout.message.registration_success'));
+                return redirect()->route('dashboard')->with('success', 'Task Created Successfully!');
             }
         } else {
             $userPlan = new UserPlan();
@@ -136,30 +136,29 @@ class AuthController extends Controller
 
         ]);
 
-        if (json_decode(get_settings('site_setting')) && isset(json_decode(get_settings('site_setting'))->recaptcha_secret_key)) {
-            $data = array(
-                'secret' => json_decode(get_settings('site_setting'))->recaptcha_secret_key,
-                'response' => $request->grecaptcha_response,
-            );
-            $verify = curl_init();
-            curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
-            curl_setopt($verify, CURLOPT_POST, true);
-            curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
-            curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
-            $res = curl_exec($verify);
+        // if (json_decode(get_settings('site_setting')) && isset(json_decode(get_settings('site_setting'))->recaptcha_secret_key)) {
+        //     $data = array(
+        //         'secret' => json_decode(get_settings('site_setting'))->recaptcha_secret_key,
+        //         'response' => $request->grecaptcha_response,
+        //     );
+        //     $verify = curl_init();
+        //     curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+        //     curl_setopt($verify, CURLOPT_POST, true);
+        //     curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
+        //     curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
+        //     curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+        //     $res = curl_exec($verify);
 
-            $captcha = json_decode($res);
+        //     $captcha = json_decode($res);
 
-            if ($captcha->success == false) {
-                return redirect()->back()->withErrors(['failed' => 'Invalid Captcha, You are a freakin robot!'])->withInput();
-            }
-        }
+        //     if ($captcha->success == false) {
+        //         return redirect()->back()->withErrors(['failed' => 'Invalid Captcha, You are a freakin robot!'])->withInput();
+        //     }
+        // }
 
         $remember = isset($request->remember_me) ? true : false;
 
         $credentials = $request->only('email', 'password');
-
 
 
         if (auth()->attempt($credentials, $remember)) {
@@ -183,7 +182,9 @@ class AuthController extends Controller
             }
             return redirect()->intended('dashboard');
         } else
-            toast('You has Logout already!', 'success');
+        toast('
+        <center> Your e-mail has send already! <p> please check your inbox </p> </center>'
+        ,'success');
         return redirect()->back()->withErrors(['fail' => trans('auth.failed')]);
     }
 
@@ -195,7 +196,8 @@ class AuthController extends Controller
     public function sendForgetPasswordCode(Request $request)
     {
         $user = User::where('email', $request->email)->first();
-        if (!$user) return redirect()->back()->withErrors(['msg' => trans('layout.message.user_not_found')]);
+        if (!$user) return
+        redirect()->back()->withErrors(['msg' => trans('layout.message.user_not_found')]);
         $token = sha1($user->email);
         $data = [
             'email' => $user->email,
@@ -214,8 +216,7 @@ class AuthController extends Controller
         } catch (\Exception $ex) {
             Log::error($ex->getMessage());
         }
-        Alert::success('You logIn already', 'Comeback as you please');
-        return redirect()->route('login')->with('success', trans('layout.message.reset_link_send'));
+        return redirect()->route('login')->with('success', trans('Your e-mail has send already!'));
     }
 
     public function passwordResetForm($token)
@@ -249,7 +250,6 @@ class AuthController extends Controller
         $user->password = bcrypt($request->password);
         $user->save();
         DB::table('password_resets')->where('token', $request->token)->delete();
-        Alert::success('You logout already', 'Comeback as you please');
         return redirect()->route('login')->with('success', trans('layout.message.reset_successful'));
     }
 }
