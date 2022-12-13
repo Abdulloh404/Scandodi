@@ -87,7 +87,7 @@ class AuthController extends Controller
             if ($user->type = 'customer' && $modules) {
                 return redirect()->route('multirestaurant::index');
             } else {
-                return redirect()->route('dashboard')->with('success', 'Task Created Successfully!');
+                return redirect()->route('dashboard')->with('toast_success', 'Task Created Successfully!');
             }
         } else {
             $userPlan = new UserPlan();
@@ -118,8 +118,7 @@ class AuthController extends Controller
             Log::error($ex->getMessage());
         }
         auth()->login($user);
-        Alert::success('You login already', 'Comeback as you please');
-        return redirect()->route('dashboard')->with('success', trans('layout.message.registration_success'));
+        return redirect()->route('dashboard')->with('toast_success', trans('layout.message.registration_success'));
     }
 
     public function login()
@@ -165,7 +164,7 @@ class AuthController extends Controller
             if (auth()->user()->type == 'restaurant_owner' && auth()->user()->status == 'banned') {
                 auth()->logout();
 
-                return redirect()->back()->withErrors(['fail' => trans('auth.banned')]);
+                return redirect()->back()->with(['toast_error' => trans('auth.banned')]);
             }
             $modules = modules_status('MultiRestaurant');
             if (auth()->user()->type == 'customer') {
@@ -182,10 +181,7 @@ class AuthController extends Controller
             }
             return redirect()->intended('dashboard');
         } else
-        toast('
-        <center> Your e-mail has send already! <p> please check your inbox </p> </center>'
-        ,'success');
-        return redirect()->back()->withErrors(['fail' => trans('auth.failed')]);
+        return redirect()->back()->with(['toast_error' => trans('auth.failed')]);
     }
 
     public function forgetPassword()
@@ -196,8 +192,7 @@ class AuthController extends Controller
     public function sendForgetPasswordCode(Request $request)
     {
         $user = User::where('email', $request->email)->first();
-        if (!$user) return
-        redirect()->back()->withErrors(['msg' => trans('layout.message.user_not_found')]);
+        if (!$user) return redirect()->back()->with('toast_error', trans('Your e-mail has wrong!'));
         $token = sha1($user->email);
         $data = [
             'email' => $user->email,
@@ -216,14 +211,14 @@ class AuthController extends Controller
         } catch (\Exception $ex) {
             Log::error($ex->getMessage());
         }
-        return redirect()->route('login')->with('success', trans('Your e-mail has send already!'));
+        return redirect()->route('login')->with('toast_success', trans('Your e-mail has send already!'));
     }
 
     public function passwordResetForm($token)
     {
         $resetTable = DB::table('password_resets')->where('token', $token)->first();
         if (!$resetTable) {
-            return redirect()->route('login')->withErrors(['msg' => trans('layout.message.token_expired')]);
+            return redirect()->route('login')->with(['toast_error' => trans('layout.message.token_expired')]);
         }
 
         $data['token'] = $token;
@@ -239,17 +234,17 @@ class AuthController extends Controller
 
         $resetTable = DB::table('password_resets')->where('token', $request->token)->first();
         if (!$resetTable) {
-            return redirect()->route('login')->withErrors(['msg' => trans('layout.message.token_expired')]);
+            return redirect()->route('login')->with(['toast_error' => trans('layout.message.token_expired')]);
         }
 
         $user = User::where('email', $resetTable->email)->first();
         if (!$user) {
-            return redirect()->route('login')->withErrors(['msg' => trans('layout.message.token_expired')]);
+            return redirect()->route('login')->with(['toast_error' => trans('layout.message.token_expired')]);
         }
 
         $user->password = bcrypt($request->password);
         $user->save();
         DB::table('password_resets')->where('token', $request->token)->delete();
-        return redirect()->route('login')->with('success', trans('layout.message.reset_successful'));
+        return redirect()->route('login')->with('toast_success', trans('layout.message.reset_successful'));
     }
 }

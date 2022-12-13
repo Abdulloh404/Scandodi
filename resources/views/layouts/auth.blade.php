@@ -44,7 +44,7 @@
     @yield('js')
 
 
-    {{-- @php $allErrors=''; @endphp
+    @php $allErrors=''; @endphp
     @if (isset($errors) && count($errors) > 0)
         @foreach ($errors->all() as $error)
             @php $allErrors.=$error.'<br/>' @endphp
@@ -82,7 +82,7 @@
                 });
             });
         </script>
-    @endif --}}
+    @endif
 
 </body>
 
