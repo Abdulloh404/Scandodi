@@ -1,24 +1,25 @@
 <?php
 
 use App\Models\EmailTemplate;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\URL;
+use RealRashid\SweetAlert\Facades\Alert;
 
 // **************** Mention Path Controller ****************** //
-use app\Http\Controllers\AboutController;
 use app\Http\Controllers\BlogController;
-use app\Http\Controllers\PriceController;
-use app\Http\Controllers\ContactController;
-use app\Http\Controllers\DataCommentController;
-use app\Http\Controllers\CommentController;
-use app\Http\Controllers\NewsleterController;
-use app\Http\Controllers\FacebookController;
-use app\Http\Controllers\GoogleController;
-use app\Http\Controllers\LineController;
-use app\Http\Controllers\AlertController;
 use app\Http\Controllers\HomeController;
+use app\Http\Controllers\LineController;
+use app\Http\Controllers\AboutController;
+use app\Http\Controllers\AlertController;
+use app\Http\Controllers\PriceController;
+use app\Http\Controllers\GoogleController;
+use app\Http\Controllers\CommentController;
+use app\Http\Controllers\ContactController;
+use app\Http\Controllers\FacebookController;
+use app\Http\Controllers\NewsleterController;
+use app\Http\Controllers\DataCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -102,6 +103,7 @@ Route::group(['middleware' => 'guest'], function () {
 
 //email verification
 Route::get('/email/verify', function () {
+    // Alert::success('You has login already', 'Wellcome to our website!');
     return view('auth.verify-email');
 })->middleware(['auth'])->name('verification.notice');
 

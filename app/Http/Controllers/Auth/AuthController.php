@@ -137,25 +137,25 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
 
-        if(json_decode(get_settings('site_setting')) && isset(json_decode(get_settings('site_setting'))->recaptcha_secret_key)) {
-            $data = array(
-                'secret' => json_decode(get_settings('site_setting'))->recaptcha_secret_key,
-                'response' => $request->grecaptcha_response,
-            );
-            $verify = curl_init();
-            curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
-            curl_setopt($verify, CURLOPT_POST, true);
-            curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
-            curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
-            curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
-            $res = curl_exec($verify);
+        // if(json_decode(get_settings('site_setting')) && isset(json_decode(get_settings('site_setting'))->recaptcha_secret_key)) {
+        //     $data = array(
+        //         'secret' => json_decode(get_settings('site_setting'))->recaptcha_secret_key,
+        //         'response' => $request->grecaptcha_response,
+        //     );
+        //     $verify = curl_init();
+        //     curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+        //     curl_setopt($verify, CURLOPT_POST, true);
+        //     curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
+        //     curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
+        //     curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+        //     $res = curl_exec($verify);
 
-            $captcha = json_decode($res);
+        //     $captcha = json_decode($res);
 
-            if ($captcha->success == false) {
-                return redirect()->back()->withErrors(['failed'=>'Invalid Captcha, You are a freakin robot!'])->withInput();
-            }
-        }
+        //     if ($captcha->success == false) {
+        //         return redirect()->back()->withErrors(['failed'=>'Invalid Captcha, You are a freakin robot!'])->withInput();
+        //     }
+        // }
 
         $remember = isset($request->remember_me) ? true : false;
 
@@ -185,9 +185,15 @@ class AuthController extends Controller
             return redirect()->intended('dashboard');
 
         } else
-            return redirect()->back()->withErrors(['fail' => trans('auth.failed')]);
+            return
+            
+            redirect()->back()->withErrors(['fail' => trans('auth.failed')]);
 
     }
+
+
+
+///////////////////////////////////////////// Reset password//////////////////////////////////////////
 
     public function forgetPassword()
     {
