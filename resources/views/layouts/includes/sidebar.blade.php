@@ -158,7 +158,6 @@
 
         </li>
     @endcan
-
     @can('plan_manage')
         <li class="{{ isSidebarActive('plan*') }} active-no-child"><a class="ai-icon" href="{{ route('plan.index') }}"
                 aria-expanded="false">
