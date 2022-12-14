@@ -3,10 +3,10 @@
 <div class="container-fluid bg-color">
     <div class="container p-xl-5 p-lg-5 p-md-5 p-0 ">
         <div class="row bg-feature wow fadeInUp" data-wow-delay="0.2s">
-            <div class="h1 text-center fw-bold p-3">
+            <div class="h1 text-center fw-bold p-3 m-0">
                 Features
             </div>
-            <div class="col-lg-4 col-md-6 col-6 sub-items1">
+            <div class="col-lg-4 col-md-6 col-12 sub-items1">
                 <!-- <div class="img-content-features ">
                 </div> -->
                 <div class="text-center py-4 px-3 wow fadeIn" data-wow-delay="0.5s">
@@ -19,7 +19,7 @@
                     </span>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-6 sub-items1">
+            <div class="col-lg-4 col-md-6 col-12 sub-items1">
                 <!-- <div class="img-content-features ">
                 </div> -->
                 <div class="text-center py-4 px-3 wow fadeIn" data-wow-delay="0.5s">
@@ -32,7 +32,7 @@
                     </span>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-6 sub-items1">
+            <div class="col-lg-4 col-md-6 col-12 sub-items1">
                 <!-- <div class="img-content-features ">
                 </div> -->
                 <div class="text-center py-4 px-3 wow fadeIn" data-wow-delay="0.5s">
@@ -45,7 +45,7 @@
                     </span>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-6 sub-items2">
+            <div class="col-lg-4 col-md-6 col-12 sub-items2">
                 <!-- <div class="img-content-features ">
                 </div> -->
                 <div class="text-center py-4 px-3 wow fadeIn" data-wow-delay="0.5s">
@@ -58,7 +58,7 @@
                     </span>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-6 sub-items2">
+            <div class="col-lg-4 col-md-6 col-12 sub-items2">
                 <!-- <div class="img-content-features ">
                 </div> -->
                 <div class="text-center py-4 px-3 wow fadeIn" data-wow-delay="0.5s">
@@ -71,7 +71,7 @@
                     </span>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-6 sub-items2">
+            <div class="col-lg-4 col-md-6 col-12 sub-items2">
                 <!-- <div class="img-content-features ">
                 </div> -->
                 <div class="text-center py-4 px-3 wow fadeIn" data-wow-delay="0.5s">
