@@ -57,14 +57,6 @@ button:focus {
     line-height: 25px;
 }
 
-.text-gradient {
-    background: rgba(254, 99, 91, 1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 50px;
-    font-weight: 400;
-}
-
 h1,
 h2,
 h3,
