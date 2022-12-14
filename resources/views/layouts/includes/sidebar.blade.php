@@ -51,6 +51,7 @@
             </a>
         </li>
     @endif
+
     @php
         $modules = modules_status('MultiRestaurant');
     @endphp
