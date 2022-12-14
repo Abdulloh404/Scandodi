@@ -36,15 +36,16 @@ $modules = modules_status('MultiRestaurant');
 if ($modules) {
     Route::get('/home', [\App\Http\Controllers\FrontController::class, 'home'])->name('home');
 }
+Route::get('/', [\App\Http\Controllers\FrontController::class, 'index'])->name('index');
+Route::get('/privacy/policy', [\App\Http\Controllers\FrontController::class, 'privacy_policy'])->name('privacy.policy');
+Route::get('/terms/conditions', [\App\Http\Controllers\FrontController::class, 'terms_conditions'])->name('terms.conditions');
 
 //test
-
 Route::get('/testhidefrom', function () {
     return view('hidefrom');
 })->name('hide');
 
 //Scandodi
-Route::get('/', [\App\Http\Controllers\FrontController::class, 'index'])->name('index');
 Route::get('/about', [\App\Http\Controllers\AboutController::class, 'showabout']);
 Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'showblog']);
 Route::get('/price', [\App\Http\Controllers\PriceController::class, 'showprice']);
