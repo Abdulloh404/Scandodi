@@ -15,3 +15,8 @@
     padding-right: 5px;
     color: #000;
 }
+
+.content-price a {
+    text-decoration: none;
+    color: #000;
+}
