@@ -2,13 +2,13 @@
 <footer>
     <div class="container-fluid bg-color py-3">
         <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-12 d-flex justify-content-center align-items-center">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-12 d-flex justify-content-center align-items-center mb-2">
                 <div class="img-container">
                     <img src="../front/images/logo.png" alt="">
                 </div>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-4 col-6">
-                <div class="second-container">
+            <div class="col-xl-2 col-lg-2 col-md-4 col-5 ms-md-0 ms-auto">
+                <div class="second-container text-xl-start text-lg-start text-md-start text-center">
                     <h5>
                         PRODUCT
                     </h5>
@@ -21,8 +21,8 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-xl-2 col-lg-2 col-md-4 col-6">
-                <div class="third-container">
+            <div class="col-xl-2 col-lg-2 col-md-4 col-5 me-md-0 me-auto">
+                <div class="third-container text-xl-start text-lg-start text-md-start text-center">
                     <h5>
                         COMPANY
                     </h5>

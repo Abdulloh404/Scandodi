@@ -32,9 +32,9 @@
         rel="stylesheet">
     <link href="{{ asset('front/css/bootstrap.css') }}" rel="stylesheet">
     @if (isset(json_decode(get_settings('site_setting'))->cookie_consent) &&
-        json_decode(get_settings('site_setting'))->cookie_consent == 'enable')
-        <link rel="stylesheet" type="text/css"
-            href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    json_decode(get_settings('site_setting'))->cookie_consent == 'enable')
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
     @endif
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
 
@@ -63,7 +63,7 @@
             </h1>
         </div>
     </div>
-    <div class="container-fluid bg-color mb-xl mb-lg mb-md mb-4">
+    <div class="container-fluid bg-color mb-xl mb-lg mb-md">
         <div class="container p-xl-5 p-lg-5 p-md-5 p-3">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-12 text-white my-xl-auto my-lg-auto mb-md-auto mb-3 wow fadeInLeft"
@@ -86,7 +86,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid mb-xl mb-lg mb-md mb-4">
+    <div class="container-fluid mb-xl mb-lg mb-md">
         <div class="container p-xl-5 p-lg-5 p-md-5 p-3">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-8 col-12 my-xl-auto my-lg-auto mb-md-5 mb-3 mx-auto">
@@ -129,41 +129,41 @@
     <script src="{{ asset('front/js/jquery.magnific-popup.js') }}"></script> <!-- Magnific Popup for lightboxes -->
     <script src="{{ asset('front/js/scripts.js') }}"></script> <!-- Custom scripts -->
     @if (isset(json_decode(get_settings('site_setting'))->cookie_consent) &&
-        json_decode(get_settings('site_setting'))->cookie_consent == 'enable')
-        <script src="{{ asset('js/cookie_consent.js') }}"></script>
-        <script>
-            window.cookieconsent.initialise({
-                "palette": {
-                    "popup": {
-                        "background": "#8000ff"
-                    },
-                    "button": {
-                        "background": "#f2cbcb"
-                    }
-                },
-                "theme": "classic",
-                "position": "bottom-left",
-                "type": "opt-out",
-                "content": {
-                    "href": "{{ route('privacy.policy') }}"
-                }
-            });
-        </script>
+    json_decode(get_settings('site_setting'))->cookie_consent == 'enable')
+    <script src="{{ asset('js/cookie_consent.js') }}"></script>
+    <script>
+    window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+                "background": "#8000ff"
+            },
+            "button": {
+                "background": "#f2cbcb"
+            }
+        },
+        "theme": "classic",
+        "position": "bottom-left",
+        "type": "opt-out",
+        "content": {
+            "href": "{{ route('privacy.policy') }}"
+        }
+    });
+    </script>
     @endif
 
     @if (isset(json_decode(get_settings('site_setting'))->crips_token) &&
-        json_decode(get_settings('site_setting'))->crips_token)
-        <script type="text/javascript">
-            window.$crisp = [];
-            window.CRISP_WEBSITE_ID = "{{ json_decode(get_settings('site_setting'))->crips_token }}";
-            (function() {
-                d = document;
-                s = d.createElement("script");
-                s.src = "https://client.crisp.chat/l.js";
-                s.async = 1;
-                d.getElementsByTagName("head")[0].appendChild(s);
-            })();
-        </script>
+    json_decode(get_settings('site_setting'))->crips_token)
+    <script type="text/javascript">
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "{{ json_decode(get_settings('site_setting'))->crips_token }}";
+    (function() {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+    </script>
     @endif
 </body>
 

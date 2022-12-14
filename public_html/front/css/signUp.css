@@ -1,27 +1,5 @@
-.bg-color {
-    height: 100vh;
-}
-
 .height-page {
-    height: 110vh;
-}
-
-@media screen and (max-width: 1200px) {
-    .height-page {
-        height: 120vh;
-    }
-}
-
-@media screen and (max-width: 992px) {
-    .height-page {
-        height: 100vh;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .height-page {
-        height: 100vh;
-    }
+    height: 100vh;
 }
 
 @media screen and (max-width: 576px) {

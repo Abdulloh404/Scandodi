@@ -7,25 +7,7 @@ body {
 }
 
 .height-page-login {
-    height: 110vh;
-}
-
-@media screen and (max-width: 1200px) {
-    .height-page-login {
-        height: 120vh;
-    }
-}
-
-@media screen and (max-width: 992px) {
-    .height-page-login {
-        height: 100vh;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .height-page-login {
-        height: 100vh;
-    }
+    height: 100vh;
 }
 
 @media screen and (max-width: 576px) {
