@@ -23,9 +23,8 @@
 <body class="{{ $siteDirection }}" direction="{{ $siteDirection }}">
 
 
-    <!--**********************************
-    Main wrapper start
-***********************************-->
+    <!--********************************** Main wrapper start ***********************************-->
+
     @php $modules = modules_status('MultiRestaurant'); @endphp
     <div id="main-wrapper">
         <div class="nav-header">
