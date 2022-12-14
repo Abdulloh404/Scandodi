@@ -22,36 +22,12 @@
             <div class="col-xl-8 col-lg-8 col-md-12 col-12 wow fadeInUp" data-wow-delay="0.1s">
                 <h1 class="text-center text-dark">ติดต่อเรา</h1>
 
-<<<<<<< HEAD
-            <form action="{{ route('insert.comment') }}" method="POST" enctype="multipart/form-data"
-                class="contact-form form-control-submit">
-                <div class="row">
-                    @csrf
-                    <div class=" from-group  col-xl-6 col-lg-6 col-md-6 col-12" required>
-                        <input type="text" name="name" placeholder="Name">
-                    </div>
-                    <div class=" from-group  col-xl-6 col-lg-6 col-md-6 col-12">
-                        <input type="email" name="email" placeholder="Email" required>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-12">
-                        <input type="text" name="company" placeholder="Company" required>
-                    </div>
-                    <div class=" from-group  col-xl-6 col-lg-6 col-md-6 col-12" required>
-                        <input type="tel" name="phone" placeholder="Tell" pattern="[0]{1}[0-9]{9}">
-                    </div>
-                    <div class=" from-group  col-xl-12 col-lg-12 col-md-12 col-12">
-                        <div class=" from-group  d-grid">
-                            <input type="text" placeholder="Business" name="Business">
-                            <textarea name="Comment" id="" cols="5" rows="10" class="my-2" placeholder="Comment"
-                                required></textarea>
-=======
                 <form action="{{ route('insert.comment') }}" method="POST" enctype="multipart/form-data"
                     class="contact-form form-control-submit">
                     <div class="row">
                         @csrf
                         <div class=" from-group  col-xl-6 col-lg-6 col-md-6 col-12" required>
                             <input type="text" name="name" placeholder="Name">
->>>>>>> parent of 4304e24 (add)
                         </div>
                         <div class=" from-group  col-xl-6 col-lg-6 col-md-6 col-12">
                             <input type="email" name="email" placeholder="Email" required>
