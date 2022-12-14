@@ -1,11 +1,7 @@
 @extends('layouts.dashboard')
-
 @section('title', trans('layout.dashboard'))
-
 @section('css')
-
 @endsection
-
 @section('main-content')
 
     @if (!$userPlan && auth()->user()->type == 'restaurant_owner')
