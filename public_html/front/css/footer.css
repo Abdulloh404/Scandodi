@@ -13,9 +13,8 @@ footer a:hover {
 footer ul {
     padding: 0;
 }
-
 .img-container {
-    width: 180px;
+    width: 200px;
     height: auto;
 }
 
@@ -35,28 +34,4 @@ footer .input-group>button {
 footer .input-group>input {
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
-}
-
-@media screen and (max-width:1200px) {
-    footer .img-container {
-        width: 170px;
-    }
-}
-
-@media screen and (max-width:992px) {
-    footer .img-container {
-        width: 150px;
-    }
-}
-
-@media screen and (max-width:768px) {
-    footer .img-container {
-        width: 140px;
-    }
-}
-
-@media screen and (max-width:576px) {
-    footer .img-container {
-        width: 140px;
-    }
 }
