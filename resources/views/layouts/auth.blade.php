@@ -39,6 +39,8 @@
 <body class="h-auto bg-color">
     @yield('main-content')
 
+    {{-- end yield --}}
+
     <script src="{{ asset('front/js/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/toastr/js/toastr.min.js') }}"></script>
     @yield('js')
