@@ -1,11 +1,12 @@
-@import url('../font/Kanit-Regular.ttf');
+@import url("../font/Kanit-Regular.ttf");
 @font-face {
-    font-family: 'Kanit';
-    src: url('../font/Kanit-Regular.ttf.woff2') format("woff2"), url('../font/Kanit-Regular.ttf') format('truetype');
+    font-family: "Kanit";
+    src: url("../font/Kanit-Regular.ttf.woff2") format("woff2"),
+        url("../font/Kanit-Regular.ttf") format("truetype");
 }
 
 body {
-    font-family: 'Kanit', sans-serif;
+    font-family: "Kanit", sans-serif;
     -webkit-text-size-adjust: 100% !important;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-font-smoothing: subpixel-antialiased !important;
@@ -29,7 +30,7 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-input[type=number] {
+input[type="number"] {
     -moz-appearance: textfield;
 }
 
@@ -45,7 +46,12 @@ button:focus {
 }
 
 .bg-color {
-    background: linear-gradient(180deg, #F54D6F 0%, #FE635B 43.23%, #EA4A7A 100%);
+    background: linear-gradient(
+        180deg,
+        #f54d6f 0%,
+        #fe635b 43.23%,
+        #ea4a7a 100%
+    );
     height: auto;
 }
 
