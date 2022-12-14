@@ -42,7 +42,7 @@
                                 <input type="text" placeholder="Business" name="Business">
                                 <textarea name="Comment" id="" cols="5" rows="10" class="my-2" placeholder="Comment" required></textarea>
                             </div>
-                            <div class="d-flex justify-content-center mt-5 mb-5 float-right ">
+                            <div class="d-flex justify-content-center mt-4 mb-4  ">
                                 <button class="btn-send px-5 py-3" type="submit">Sent</button>
                                 {{-- Sweet alert submit --}}
                                 @include('sweetalert::alert')
