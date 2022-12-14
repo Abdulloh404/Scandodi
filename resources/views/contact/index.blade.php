@@ -16,7 +16,6 @@
             <!--End Pattern HTML-->
         </div>
     </div>
-    <br>
     <div class="row pt-xl-0 pt-lg-0 pt-md-0 pt-5 mt-xl-0 mt-lg-0 mt-md-0 mt-5">
         <div class="col-xl-2 col-lg-2 col-md-12 col-12"></div>
         <div class="col-xl-8 col-lg-8 col-md-12 col-12 wow fadeInUp" data-wow-delay="0.1s">
@@ -41,7 +40,7 @@
                     <div class=" from-group  col-xl-12 col-lg-12 col-md-12 col-12">
                         <div class=" from-group  d-grid">
                             <input type="text" placeholder="Business" name="Business">
-                            <textarea name="Comment" id="" cols="5" rows="10" class="my-3" placeholder="Comment"
+                            <textarea name="Comment" id="" cols="5" rows="10" class="my-2" placeholder="Comment"
                                 required></textarea>
                         </div>
                         <div class="d-flex justify-content-center mt-3 mb-5 float-right">
