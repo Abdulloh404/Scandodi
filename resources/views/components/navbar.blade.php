@@ -1,14 +1,14 @@
-
 <link rel="stylesheet" href="front/css/navbar.css">
 <nav class="navbar navbar-expand-lg bg-light sticky-top">
-    <div class="container-fluid px-3">
+    <div class="container-fluid px-3 ps-2">
         <a class="navbar-brand" href="/">
             <img src="uploads/logo.png" alt="" width="75px" height="auto">
         </a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse px-2 px-xl-5" id="navbarNav">
+        <div class="collapse navbar-collapse px-2 px-xl-5 pe-xl-2" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item mx-0 mx-xl-4">
                     <a class="nav-link" aria-current="page" href="/">HOME</a>
@@ -28,8 +28,8 @@
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto ">
-                <li class="nav-item ">
-                    <a class="nav-link" href="/login">LOGIN</a>
+                <li class="nav-item">
+                    <a class="nav-link me-xl-2 me-lg-2" href="/login">LOGIN</a>
                 </li>
                 {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
