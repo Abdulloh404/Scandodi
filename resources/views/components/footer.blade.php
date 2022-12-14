@@ -2,12 +2,12 @@
 <footer>
     <div class="container-fluid bg-color py-3">
         <div class="row">
-            <div class="col-lg-4 col-12 d-flex justify-content-center align-items-center">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-12 d-flex justify-content-center align-items-center">
                 <div class="img-container">
                     <img src="../front/images/logo.png" alt="">
                 </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-6">
+            <div class="col-xl-2 col-lg-2 col-md-4 col-6">
                 <div class="second-container">
                     <h5>
                         PRODUCT
@@ -21,7 +21,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-3 col-6">
+            <div class="col-xl-2 col-lg-2 col-md-4 col-6">
                 <div class="third-container">
                     <h5>
                         COMPANY
@@ -33,7 +33,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-12">
+            <div class="col-xl-3 col-lg-4 col-md-10 col-12 mx-xl-0 mx-auto">
                 <div class="fourth-container text-center">
                     <h6>
                         Stay informed about special offers
