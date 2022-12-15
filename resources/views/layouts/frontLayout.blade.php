@@ -38,7 +38,6 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <link href="{{ asset('front/css/swiper.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/magnific-popup.css') }}" rel="stylesheet">
-    <link href="{{ asset('front/css/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/index.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
     <!-- Favicon  -->
