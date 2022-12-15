@@ -16,7 +16,28 @@
     color: #000;
 }
 
-.content-price a {
-    text-decoration: none;
-    color: #000;
+.btn {
+    color: rgba(254, 100, 90, 1);
+    background: rgb(255, 255, 255);
+    border: 1px solid rgba(254, 100, 90, 1);
+    box-shadow: 0px 10px 15px rgba(1, 115, 153, 0.2);
+    border-radius: 39px;
+    padding: 20px 80px;
+    margin-right: 5px;
+}
+
+.btn-light:hover {
+    color: rgb(255, 255, 255);
+    background: rgba(254, 120, 90, 1);
+    border: 1px solid rgba(254, 120, 90, 1);
+    transition: 0.5s;
+}
+
+.card-img-top {
+    width: 300px;
+}
+
+.card {
+    padding: 0;
+    margin: 20px, 0, 20px, 0;
 }

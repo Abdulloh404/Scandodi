@@ -1,20 +1,19 @@
 <link rel="stylesheet" href="../front/css/content-price.css">
 
-<div class="container-fluid content-price mb-xl-0 mb-lg-0 mb-md-0 mb-2">
-    <div class="container p-xl-4 p-lg-4 p-md-4 p-0 py-3">
+<div class="container-fluid content-price mb-xl-0 mb-lg-0 mb-md-0 mt-5 ">
+    <div class="container p-xl-4 p-lg-4 p-md-4 p-0 py-3 mb-4">
         <div class="row g-4 d-flex justify-content-around flex-warp">
             @if (isset($plans))
                 @foreach ($plans as $plan)
                     <!-- Card-->
-                    <div class="card border-0 bg-color wow fadeInRight" data-wow-delay="0.3s"
-                        style="height: 400px; width:300px;">
-                        <img src="uploads/img-price-2.png" class="card-img-top" alt="...">
+                    <div class="card border-0 rounded-5 bg-color wow fadeInRight" data-wow-delay="0.3s"
+                        style="height: auto; width:300px;">
+                        <img src="uploads/img-price-2.png" class="card-img-top" alt="..." height="150">
                         <div class="card-body text-white">
                             <div class="card-title">
                                 {{ $plan->title }}
                             </div>
-                            <div class="price"><span
-                                    class="value">{{ formatNumberWithCurrSymbol($plan->cost) }}</span></div>
+
                             <div class="frequency">{{ $plan->recurring_type }}</div>
                             <div class="divider"></div>
                             <ul class="list-unstyled li-space-lg">
@@ -59,8 +58,11 @@
                                 </li>
 
                             </ul>
-                            <div class="button-wrapper">
-                                <a class="btn btn-light center"
+                            <div class="price d-flex justify-content-center pt-4"><span class="value"
+                                    style="font-size: 20px">{{ formatNumberWithCurrSymbol($plan->cost) }} BATH</span>
+                            </div>
+                            <div class="d-flex justify-content-center mt-1 mb-3 pt-2 pb-1 ">
+                                <a class="btn btn-light center px-5 py-3"
                                     href="{{ route('registration', ['plan' => $plan->id]) }}">{{ trans('layout.join') }}</a>
                             </div>
                         </div>
