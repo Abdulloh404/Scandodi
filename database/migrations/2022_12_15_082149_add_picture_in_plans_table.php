@@ -14,7 +14,7 @@ class AddPictureInPlansTable extends Migration
     public function up()
     {
         Schema::table('plans', function (Blueprint $table) {
-            $table->string('picture');
+            $table->string('picture')->nullable();
         });
     }
 

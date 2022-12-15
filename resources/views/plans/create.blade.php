@@ -13,19 +13,15 @@
                 <h4>{{ trans('layout.plan') }}</h4>
                 <p class="mb-0">{{ trans('layout.item_create') }}</p>
             </div>
-
         </div>
         <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">{{ trans('layout.home') }}</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('plan.index') }}">{{ trans('layout.plan') }}</a></li>
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">{{ trans('layout.create') }}</a></li>
-                <li class="breadcrumb-item active"><a href="javascript:void(0)">{{ trans('layout.create') }}</a></li>
             </ol>
         </div>
     </div>
-
-
     <!-- row -->
     <div class="row">
         <div class="col-xl-12 col-xxl-12">
