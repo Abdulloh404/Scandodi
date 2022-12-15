@@ -20,7 +20,6 @@
     <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
     <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
     <meta property="og:type" content="article" />
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <!-- Website Title -->
     <title>
@@ -32,21 +31,18 @@
         rel="stylesheet">
     <link href="{{ asset('front/css/bootstrap.css') }}" rel="stylesheet">
     @if (isset(json_decode(get_settings('site_setting'))->cookie_consent) &&
-    json_decode(get_settings('site_setting'))->cookie_consent == 'enable')
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+        json_decode(get_settings('site_setting'))->cookie_consent == 'enable')
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
     @endif
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
-
     <link href="{{ asset('front/css/swiper.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/magnific-popup.css') }}" rel="stylesheet">
+    <link href="{{ asset('front/css/styles.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/index.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
-
     <!-- Favicon  -->
     <link rel="icon" href="{{ asset('uploads/logo.png' . json_decode(get_settings('site_setting'))->favicon) }}">
-
-
 
 </head>
 
@@ -129,41 +125,41 @@
     <script src="{{ asset('front/js/jquery.magnific-popup.js') }}"></script> <!-- Magnific Popup for lightboxes -->
     <script src="{{ asset('front/js/scripts.js') }}"></script> <!-- Custom scripts -->
     @if (isset(json_decode(get_settings('site_setting'))->cookie_consent) &&
-    json_decode(get_settings('site_setting'))->cookie_consent == 'enable')
-    <script src="{{ asset('js/cookie_consent.js') }}"></script>
-    <script>
-    window.cookieconsent.initialise({
-        "palette": {
-            "popup": {
-                "background": "#8000ff"
-            },
-            "button": {
-                "background": "#f2cbcb"
-            }
-        },
-        "theme": "classic",
-        "position": "bottom-left",
-        "type": "opt-out",
-        "content": {
-            "href": "{{ route('privacy.policy') }}"
-        }
-    });
-    </script>
+        json_decode(get_settings('site_setting'))->cookie_consent == 'enable')
+        <script src="{{ asset('js/cookie_consent.js') }}"></script>
+        <script>
+            window.cookieconsent.initialise({
+                "palette": {
+                    "popup": {
+                        "background": "#8000ff"
+                    },
+                    "button": {
+                        "background": "#f2cbcb"
+                    }
+                },
+                "theme": "classic",
+                "position": "bottom-left",
+                "type": "opt-out",
+                "content": {
+                    "href": "{{ route('privacy.policy') }}"
+                }
+            });
+        </script>
     @endif
 
     @if (isset(json_decode(get_settings('site_setting'))->crips_token) &&
-    json_decode(get_settings('site_setting'))->crips_token)
-    <script type="text/javascript">
-    window.$crisp = [];
-    window.CRISP_WEBSITE_ID = "{{ json_decode(get_settings('site_setting'))->crips_token }}";
-    (function() {
-        d = document;
-        s = d.createElement("script");
-        s.src = "https://client.crisp.chat/l.js";
-        s.async = 1;
-        d.getElementsByTagName("head")[0].appendChild(s);
-    })();
-    </script>
+        json_decode(get_settings('site_setting'))->crips_token)
+        <script type="text/javascript">
+            window.$crisp = [];
+            window.CRISP_WEBSITE_ID = "{{ json_decode(get_settings('site_setting'))->crips_token }}";
+            (function() {
+                d = document;
+                s = d.createElement("script");
+                s.src = "https://client.crisp.chat/l.js";
+                s.async = 1;
+                d.getElementsByTagName("head")[0].appendChild(s);
+            })();
+        </script>
     @endif
 </body>
 
