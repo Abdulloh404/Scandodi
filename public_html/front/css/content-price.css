@@ -41,3 +41,11 @@
     padding: 0;
     margin: 20px, 0, 20px, 0;
 }
+.card-title {
+    font-size: 25px;
+}
+.frequency {
+    font-size: 18px;
+    padding-bottom: 15px;
+    text-align: center;
+}

@@ -58,10 +58,10 @@
                                 </li>
 
                             </ul>
-                            <div class="price d-flex justify-content-center pt-4"><span class="value"
+                            <div class="price d-flex justify-content-center pt-2"><span class="value"
                                     style="font-size: 20px">{{ formatNumberWithCurrSymbol($plan->cost) }} BATH</span>
                             </div>
-                            <div class="d-flex justify-content-center mt-1 mb-3 pt-2 pb-1 ">
+                            <div class="d-flex justify-content-center mt-1 mb-2 pt-1 pb-1 ">
                                 <a class="btn btn-light center px-5 py-3"
                                     href="{{ route('registration', ['plan' => $plan->id]) }}">{{ trans('layout.join') }}</a>
                             </div>
