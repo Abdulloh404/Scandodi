@@ -36,6 +36,7 @@
     </script>
 
     <!-- Styles -->
+    <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
         rel="stylesheet">
     <link href="{{ asset('front/css/bootstrap.css') }}" rel="stylesheet">
@@ -45,8 +46,6 @@
             href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
     @endif
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
-
-
     <link href="{{ asset('front/css/swiper.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/magnific-popup.css') }}" rel="stylesheet">
 
@@ -58,6 +57,10 @@
     <link href="{{ asset('front/css/price.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/blog-detail.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/about.css') }}" rel="stylesheet">
+    <link href="{{ asset('front/css/content-price') }}" rel="stylesheet">
+
+    <!-- Favicon  -->
+    <link rel="icon" href="{{ asset('uploads/logo.png' . json_decode(get_settings('site_setting'))->favicon) }}">
 
     {{-- Notify --}}
     <title>Laravel Sweet Alert Notification</title>
@@ -135,7 +138,8 @@
     var sw = document.body.clientWidth,
         bp = 550,
         $map = $('.map');
-    var embed = '<iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=thaicc tower&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>';
+    var embed =
+        '<iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=thaicc tower&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>';
 
     function buildMap() {
         if (sw > bp) { //If Large Screen

@@ -14,8 +14,8 @@
         </div>
     </div>
 
-    @include('components.content-price')
 
+    @include('components.content-price')
     @include('components.features')
     @include('components.content-1')
     @include('components.footer')
