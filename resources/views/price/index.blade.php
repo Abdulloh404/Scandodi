@@ -1,13 +1,9 @@
 @extends('header.index')
 @section('main-content')
-    @yield('css')
-    <link rel="stylesheet" href="../front/css/content-price.css">
-
     @include('components.header')
     @include('components.navbar')
 
     @php $template = json_decode(get_settings('frontend_template')); @endphp
-
 
     <div class="container-fluid p-0">
         <div class="bg-price text-white d-flex justify-content-center align-items-center text-center">
@@ -16,7 +12,6 @@
             </h1>
         </div>
     </div>
-
 
     @include('components.content-price')
     @include('components.features')
