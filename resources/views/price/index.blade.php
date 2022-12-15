@@ -1,5 +1,8 @@
 @extends('header.index')
 @section('main-content')
+    @yield('css')
+    <link rel="stylesheet" href="../front/css/content-price.css">
+
     @include('components.header')
     @include('components.navbar')
 
