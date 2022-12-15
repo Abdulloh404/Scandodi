@@ -45,7 +45,7 @@
                                     <th><strong>{{ trans('layout.item_limit') }}</strong></th>
                                     <th><strong>{{ trans('layout.status') }}</strong></th>
                                     <th><strong>{{ trans('layout.action') }}</strong></th>
-                                    <th><strong>{{ trans('Picture') }}</strong></th>
+                                    <th><strong>{{ trans('layout.picture') }}</strong></th>
                                 </tr>
                             </thead>
                             <tbody class="text-center">
