@@ -27,7 +27,13 @@ class PlanController extends Controller
             'table_limit'=>'required|numeric|gt:-1',
             'restaurant_limit'=>'required|numeric|gt:-1',
             'item_limit'=>'required|numeric|gt:-1',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:300',
         ]);
+
+        // Storage images in uplaods folder
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('uploads-images'), $imageName);
+
 
         if($request->is_item_unlimited=='yes'){
             unset($request['is_item_unlimited']);

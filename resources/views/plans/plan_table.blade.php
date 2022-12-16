@@ -107,8 +107,10 @@
                                                             data-input={"_method":"delete"} data-toggle="modal"
                                                             data-target="#modal-confirm">{{ trans('layout.delete') }}</button>
                                                     </div>
+
                                                 </div>
                                             </td>
+                                            <td>{{ $plan->image }}</td>
                                         </tr>
                                     @endforeach
                                 @endif
