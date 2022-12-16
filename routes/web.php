@@ -19,6 +19,7 @@ use app\Http\Controllers\GoogleController;
 use app\Http\Controllers\LineController;
 use app\Http\Controllers\AlertController;
 use app\Http\Controllers\HomeController;
+use app\Http\Controllers\PlanController;
 
 /*
 |--------------------------------------------------------------------------
