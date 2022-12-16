@@ -35,7 +35,7 @@ class PlanController extends Controller
             'table_limit' => 'required|numeric|gt:-1',
             'restaurant_limit' => 'required|numeric|gt:-1',
             'item_limit' => 'required|numeric|gt:-1',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:300',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:300',
         ]);
 
 
@@ -65,7 +65,7 @@ class PlanController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            $file->move(public_path('/uploads-images') . $filename);
+            $file->move(public_path('/uploads-images'), $filename);
         } else {
             $request['restaurant_unlimited'] = 'no';
         }
