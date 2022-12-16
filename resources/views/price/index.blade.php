@@ -43,19 +43,4 @@
             })
         </script>
     @endif
-
-    @if (isset(json_decode(get_settings('site_setting'))->crips_token) &&
-        json_decode(get_settings('site_setting'))->crips_token)
-        <script type="text/javascript">
-            window.$crisp = [];
-            window.CRISP_WEBSITE_ID = "{{ json_decode(get_settings('site_setting'))->crips_token }}";
-            (function() {
-                d = document;
-                s = d.createElement("script");
-                s.src = "https://client.crisp.chat/l.js";
-                s.async = 1;
-                d.getElementsByTagName("head")[0].appendChild(s);
-            })();
-        </script>
-    @endif
 @endsection
