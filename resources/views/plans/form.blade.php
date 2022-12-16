@@ -117,16 +117,15 @@
 
             <div class="col-lg-12 mb-2">
                 <div class="form-group">
-                    <label class="text-label">{{ trans('layout.image') }}* </label>
-                    <input value="{{ old('image') ? old('image') : (isset($plan) ? $plan->image : '') }}"
-                        type="file" id="inputImage" name="image" class="form-control"
-                        placeholder="Ex: Upload images" required>
-                    <span style="color: rgb(150, 49, 49);"> * Typefile : JPEG PNG JPG</span><br>
-                    <span style="color: rgb(150, 49, 49);"> ** Scale : 300 X 150 px</span>
-
+                    <label class="text-label">{{ trans('layout.image') }}* 300 X 150 px </label>
+                    <div class="custom-file">
+                        <input name="image"
+                            value="{{ old('image') ? old('image') : (isset($plan) ? $plan->image : '') }}"
+                            type="file" class="custom-file-input">
+                        <label class="custom-file-label">{{ trans('layout.choose') }}</label>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
 

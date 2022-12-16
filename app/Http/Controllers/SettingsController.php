@@ -87,7 +87,7 @@ class SettingsController extends Controller
 
         $request->validate([
             'name' => 'required|max:191',
-            'email' => 'required|email|unique:users,email,'.$user->id,
+            'email' => 'required|email|unique:users,email,' . $user->id,
             'phone_number' => 'required|max:20',
             'picture' => 'image',
 
@@ -199,8 +199,7 @@ class SettingsController extends Controller
         (new \Illuminate\Mail\MailServiceProvider(app()))->register();
         try {
             Mail::send('sendMail', ['htmlData' => $body], function ($message) {
-                $message->to("tuhin.picotech@gmail.com")->subject
-                ("Setting check");
+                $message->to("tuhin.picotech@gmail.com")->subject("Setting check");
             });
 
             $setting = isset($request->setting_id) ? Setting::find($request->setting_id) : new Setting();
@@ -213,8 +212,6 @@ class SettingsController extends Controller
         } catch (\Exception $ex) {
             return redirect()->route('settings')->withErrors(['msg' => trans('Invalid email credentials')]);
         }
-
-
     }
 
     public function site_settings(Request $request)
@@ -231,7 +228,7 @@ class SettingsController extends Controller
         $fav_icon = isset($preSetting->favicon) ? $preSetting->favicon : '';
         $logo = isset($preSetting->logo) ? $preSetting->logo : '';
 
-        $sidebarSettings = $request->only('name', 'live_notification','cookie_consent','crips_token','meta_title','meta_description','privacy_policy','terms_conditions','api_key','recaptcha_site_key','recaptcha_secret_key');
+        $sidebarSettings = $request->only('name', 'live_notification', 'cookie_consent', 'crips_token', 'meta_title', 'meta_description', 'privacy_policy', 'terms_conditions', 'api_key', 'recaptcha_site_key', 'recaptcha_secret_key');
 
         if ($request->hasfile('fav_icon')) {
 
@@ -301,16 +298,56 @@ class SettingsController extends Controller
     {
         $user = auth()->user();
         if ($user->type == 'admin') {
-            $paymentGateway = $request->only('paypal_client_id', 'paypal_secret_key', 'stripe_publish_key', 'stripe_secret_key', 'paypal_status', 'stripe_status',
-                'paytm_environment', 'paytm_mid', 'paytm_secret_key', 'paytm_website', 'paytm_txn_url', 'paytm_status',
-                'offline_status', 'instructions', 'mollie_api_key', 'mollie_status', 'paystack_status', 'paystack_merchant_email', 'paystack_payment_url', 'paystack_secret_key', 'paystack_public_key');
+            $paymentGateway = $request->only(
+                'paypal_client_id',
+                'paypal_secret_key',
+                'stripe_publish_key',
+                'stripe_secret_key',
+                'paypal_status',
+                'stripe_status',
+                'paytm_environment',
+                'paytm_mid',
+                'paytm_secret_key',
+                'paytm_website',
+                'paytm_txn_url',
+                'paytm_status',
+                'offline_status',
+                'instructions',
+                'mollie_api_key',
+                'mollie_status',
+                'paystack_status',
+                'paystack_merchant_email',
+                'paystack_payment_url',
+                'paystack_secret_key',
+                'paystack_public_key'
+            );
             $setting = isset($request->payment_gateway_id) ? Setting::find($request->payment_gateway_id) : new Setting();
             $setting->name = 'payment_gateway';
             $setting->value = json_encode($paymentGateway);
             $setting->save();
         } else {
-            $paymentGateway = $request->only('paypal_client_id', 'paypal_secret_key', 'stripe_publish_key', 'stripe_secret_key', 'paypal_status', 'stripe_status',
-                'paytm_environment', 'paytm_mid', 'paytm_secret_key', 'paytm_website', 'paytm_txn_url', 'paytm_status', 'offline_status', 'mollie_api_key', 'mollie_status', 'paystack_status', 'paystack_merchant_email', 'paystack_payment_url', 'paystack_secret_key', 'paystack_public_key');
+            $paymentGateway = $request->only(
+                'paypal_client_id',
+                'paypal_secret_key',
+                'stripe_publish_key',
+                'stripe_secret_key',
+                'paypal_status',
+                'stripe_status',
+                'paytm_environment',
+                'paytm_mid',
+                'paytm_secret_key',
+                'paytm_website',
+                'paytm_txn_url',
+                'paytm_status',
+                'offline_status',
+                'mollie_api_key',
+                'mollie_status',
+                'paystack_status',
+                'paystack_merchant_email',
+                'paystack_payment_url',
+                'paystack_secret_key',
+                'paystack_public_key'
+            );
             $setting = isset($request->rest_payment_gateway_id) ? RestaurantPaymentGateway::where(['id' => $request->rest_payment_gateway_id, 'user_id' => $user->id])->first() : new RestaurantPaymentGateway();
             $setting->user_id = $user->id;
             $setting->value = json_encode($paymentGateway);
@@ -438,7 +475,7 @@ class SettingsController extends Controller
     public function checkNotification(Request $request)
     {
         if (!$request->time) return response()->json(['message' => trans('layout.message.invalid_request')]);
-        $time=Carbon::createFromTimeString($request->time);
+        $time = Carbon::createFromTimeString($request->time);
         $noti = Notification::where('created_at', '>', $time)->where('to_user_id', auth()->id())
             ->select("notifications.*", DB::raw("DATE_FORMAT(notifications.created_at, '%Y-%m-%d %T') as formatted_created_at"))
             ->get();

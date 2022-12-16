@@ -6,6 +6,22 @@ use App\Models\Plan;
 use App\Models\UserPlan;
 use Illuminate\Http\Request;
 
+use App\Models\EmailTemplate;
+use App\Models\Notification;
+use App\Models\RestaurantPaymentGateway;
+use App\Models\Setting;
+use App\Models\User;
+use Barryvdh\TranslationManager\Models\Translation;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+
+
 class PlanController extends Controller
 {
     public function planList()
@@ -55,16 +71,18 @@ class PlanController extends Controller
             unset($request['is_restaurant_unlimited']);
             $request['restaurant_unlimited'] = 'yes';
             $request['restaurant_limit'] = 0;
+        }
+
+        if ($request->hasfile('image')) {
+            // Save the file locally in the storage in uplaods-images folder
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('uploads-images/'), $imageName);
+            $request = $imageName;
         } else {
             $request['restaurant_unlimited'] = 'no';
         }
-
-        // Storage images in uplaods-images folder
-        $imageName = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('uploads-images'), $imageName);
-
-
-
 
         Plan::create($request->all());
 
