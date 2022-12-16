@@ -55,17 +55,13 @@ class PlanController extends Controller
             unset($request['is_restaurant_unlimited']);
             $request['restaurant_unlimited'] = 'yes';
             $request['restaurant_limit'] = 0;
+        } else {
+            $request['restaurant_unlimited'] = 'no';
         }
-        if($request->hasfile('image')) {
 
         // Storage images in uplaods-images folder
         $imageName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('uploads-images'), $imageName);
-        $image = $request->input('image');
-        }
-        else {
-            $request['restaurant_unlimited'] = 'no';
-        }
 
 
 

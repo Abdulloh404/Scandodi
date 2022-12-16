@@ -26,7 +26,7 @@ class CreatePlansTable extends Migration
             $table->enum('restaurant_unlimited',['yes','no'])->default('no');
             $table->enum('table_unlimited',['yes','no'])->default('no');
             $table->timestamps();
-            $table->string('image')->default(null);
+            $table->string('image');
         });
     }
 
