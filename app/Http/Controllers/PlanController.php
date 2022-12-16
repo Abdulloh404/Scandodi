@@ -30,10 +30,10 @@ class PlanController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:300',
         ]);
 
-        // Storage images in uplaods folder
+        // Storage images in uplaods-images folder
         $imageName = time().'.'.$request->image->extension();
         $request->image->move(public_path('uploads-images'), $imageName);
-
+        $image->save();
 
         if($request->is_item_unlimited=='yes'){
             unset($request['is_item_unlimited']);
