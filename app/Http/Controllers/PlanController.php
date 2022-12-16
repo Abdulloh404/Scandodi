@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Plan;
 use App\Models\UserPlan;
 use Illuminate\Http\Request;
+use Stripe\ApiOperations\All;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\Input;
 use Symfony\Component\VarDumper\VarDumper;
@@ -34,7 +35,7 @@ class PlanController extends Controller
             'table_limit' => 'required|numeric|gt:-1',
             'restaurant_limit' => 'required|numeric|gt:-1',
             'item_limit' => 'required|numeric|gt:-1',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:300',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:300',
         ]);
 
 
@@ -64,30 +65,13 @@ class PlanController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time() . '.' . $extension;
-            $file->move(public_path('/uploads-images'), $filename);
-            $filename = "$filename";
-            $filename = $request->file('image');
+            $file->move(public_path('/uploads-images') . $filename);
         } else {
             $request['restaurant_unlimited'] = 'no';
         }
 
-        // Plan::create([
-        //     '_token' => $request->plans('_token'),
-        //     'title' => $request->plans('title'),
-        //     'recurring_type' => $request->plans('tags'),
-        //     'status' => $request->plans('content'),
-        //     'table_limit' => ($request->has('featured')),
-        //     'restaurant_limit' => ($request->has('featured')),
-        //     'item_unlimited' => ($request->has('featured')),
-        //     'table_unlimited' => ($request->has('featured')),
-        //     'restaurant_unlimited' =>$request->plans('content')
-        //     'images' => $request->plans('content')
-        // ]);
-
-        // array(12) { ["_token"]=> string(40) "afpl0XDSZhjZ0bvEWSsXdQgxSWWXjubvKnJyb0Hj" ["title"]=> string(37) "Gain More Control Over Your Businness" ["recurring_type"]=> string(6) "weekly" ["status"]=> string(6) "active" ["cost"]=> string(3) "599" ["table_limit"]=> int(0) ["restaurant_limit"]=> int(0) ["item_limit"]=> int(0) ["item_unlimited"]=> string(3) "yes" ["table_unlimited"]=> string(3) "yes" ["restaurant_unlimited"]=> string(3) "yes" ["image"]=> object(Illuminate\Http\UploadedFile)#1541 (7) { ["test":"Symfony\Component\HttpFoundation\File\UploadedFile":private]=> bool(false) ["originalName":"Symfony\Component\HttpFoundation\File\UploadedFile":private]=> string(15) "img-price-3.png" ["mimeType":"Symfony\Component\HttpFoundation\File\UploadedFile":private]=> string(9) "image/png" ["error":"Symfony\Component\HttpFoundation\File\UploadedFile":private]=> int(0) ["hashName":protected]=> NULL ["pathName":"SplFileInfo":private]=> string(25) "C:\wamp64\tmp\phpCF56.tmp" ["fileName":"SplFileInfo":private]=> string(11) "phpCF56.tmp" } }
-
-        // var_dump($request->all());
-        // exit('XXXXXXXXXXXXXXXXXXXX');
+        Plan::create($request->all());
+        dd($request);
         return redirect()->route('plan.index');
     }
     public function edit(Plan $plan)

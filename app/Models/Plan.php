@@ -8,5 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Plan extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'cost', 'recurring_type', 'status', 'table_limit', 'restaurant_limit', 'item_limit', 'restaurant_unlimited', 'table_unlimited', 'item_unlimited', 'image'];
+    protected $fillable = ['title', 'cost', 'recurring_type', 'status', 'table_limit', 'restaurant_limit', 'item_limit', 'restaurant_unlimited', 'table_unlimited', 'item_unlimited'];
+
+    protected $appends = [
+
+        'image',
+
+    ];
 }
