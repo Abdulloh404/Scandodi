@@ -58,7 +58,6 @@
     <link href="{{ asset('front/css/blog-detail.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/about.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/content-price') }}" rel="stylesheet">
-    <link rel="stylesheet" href="../front/css/content-price.css">
     <!-- Favicon  -->
     <link rel="icon" href="{{ asset('uploads/logo.png' . json_decode(get_settings('site_setting'))->favicon) }}">
 
@@ -75,7 +74,7 @@
 
 </head>
 
-<body data-spy="scroll" data-target=".fixed-top">
+<body>
     @yield('main-content')
 </body>
 

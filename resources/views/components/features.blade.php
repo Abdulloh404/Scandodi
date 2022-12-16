@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../front/css/features.css">
+<link rel="stylesheet" href="{{ asset('front/css/features.css') }}">
 
 <div class="container-fluid bg-color">
     <div class="container p-xl-5 p-lg-5 p-md-5 p-0 ">

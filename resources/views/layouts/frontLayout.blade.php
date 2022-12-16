@@ -40,8 +40,7 @@
     <link href="{{ asset('front/css/magnific-popup.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/index.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('front/css/contactUs.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="../front/css/content-price.css">
+    <link href="{{ asset('front/css/content-price.css') }}" rel="stylesheet">
     <!-- Favicon  -->
     <link rel="icon" href="{{ asset('uploads/logo.png' . json_decode(get_settings('site_setting'))->favicon) }}">
 

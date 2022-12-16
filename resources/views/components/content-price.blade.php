@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="../front/css/content-price.css">
+@yield('css')
+<link rel="stylesheet" href="{{ asset('front/css/content-price.css') }}">
+
 
 <div class="container-fluid content-price mb-xl-0 mb-lg-0 mb-md-0 mt-5 ">
     <div class="container p-xl-4 p-lg-4 p-md-4 p-0 py-3 mb-4">
@@ -62,7 +64,7 @@
                                     style="font-size: 20px">{{ formatNumberWithCurrSymbol($plan->cost) }} BATH</span>
                             </div>
                             <div class="d-flex justify-content-center mt-1 mb-2 pt-1 pb-1 ">
-                                <a class="btn btn-light center px-5 py-3"
+                                <a id="join-price" class="btn btn-light center px-5 py-3"
                                     href="{{ route('registration', ['plan' => $plan->id]) }}">{{ trans('layout.join') }}</a>
                             </div>
                         </div>

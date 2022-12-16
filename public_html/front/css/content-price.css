@@ -16,7 +16,7 @@
     color: #000;
 }
 
-.btn {
+#join-price {
     color: rgba(254, 100, 90, 1);
     background: rgb(255, 255, 255);
     border: 1px solid rgba(254, 100, 90, 1);
@@ -26,7 +26,7 @@
     margin-right: 5px;
 }
 
-.btn-light:hover {
+#join-price:hover {
     color: rgb(255, 255, 255);
     background: rgba(254, 120, 90, 1);
     border: 1px solid rgba(254, 120, 90, 1);
