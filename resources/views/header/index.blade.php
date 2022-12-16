@@ -49,6 +49,8 @@
     <link href="{{ asset('front/css/swiper.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/magnific-popup.css') }}" rel="stylesheet">
 
+
+    @yield('css')
     {{-- Link CSS --}}
     <link href="{{ asset('front/css/index.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/style.css') }}" rel="stylesheet">
@@ -70,7 +72,6 @@
     <!-- Favicon  -->
     <link rel="icon" href="{{ asset('uploads/logo.png' . json_decode(get_settings('site_setting'))->favicon) }}">
 
-    @yield('css')
 
 </head>
 
