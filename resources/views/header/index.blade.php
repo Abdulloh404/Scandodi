@@ -59,7 +59,8 @@
     <link href="{{ asset('front/css/price.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/blog-detail.css') }}" rel="stylesheet">
     <link href="{{ asset('front/css/about.css') }}" rel="stylesheet">
-    <link href="{{ asset('front/css/content-price') }}" rel="stylesheet">
+    <link href="{{ asset('front/css/content-price.css') }}" rel="stylesheet">
+
     <!-- Favicon  -->
     <link rel="icon" href="{{ asset('uploads/logo.png' . json_decode(get_settings('site_setting'))->favicon) }}">
 
@@ -71,8 +72,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <!-- Favicon  -->
     <link rel="icon" href="{{ asset('uploads/logo.png' . json_decode(get_settings('site_setting'))->favicon) }}">
-
-
 </head>
 
 <body>

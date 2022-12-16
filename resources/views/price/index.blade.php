@@ -15,6 +15,7 @@
 
     @include('components.content-price')
     @include('components.features')
+    <br><br>
     @include('components.content-1')
     @include('components.footer')
 @endsection
