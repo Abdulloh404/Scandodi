@@ -9,7 +9,8 @@
                     <!-- Card-->
                     <div class="card border-0 rounded-5 bg-color wow fadeInRight" data-wow-delay="0.3s"
                         style="height: auto; width:300px;">
-                        <img src="..." class="card-img-top" alt="..." height="150">
+                        <img src="{{ asset('uploads-images/' . $plan->image) }}" class="card-img-top" alt="..."
+                            height="150">
                         <div class="card-body text-white">
                             <div class="card-title">
                                 {{ $plan->title }}

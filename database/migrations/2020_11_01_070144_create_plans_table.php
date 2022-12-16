@@ -17,16 +17,16 @@ class CreatePlansTable extends Migration
             $table->id();
             $table->string('title');
             $table->double('cost')->default('0');
-            $table->enum('recurring_type',['onetime','monthly','weekly','yearly']);
+            $table->enum('recurring_type', ['onetime', 'monthly', 'weekly', 'yearly']);
             $table->integer('table_limit')->default(0);
             $table->integer('restaurant_limit')->default(0);
             $table->integer('item_limit')->default(0);
-            $table->enum('status',['active','inactive'])->default('active');
-            $table->enum('item_unlimited',['yes','no'])->default('no');
-            $table->enum('restaurant_unlimited',['yes','no'])->default('no');
-            $table->enum('table_unlimited',['yes','no'])->default('no');
-            $table->timestamps();
+            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->enum('item_unlimited', ['yes', 'no'])->default('no');
+            $table->enum('restaurant_unlimited', ['yes', 'no'])->default('no');
+            $table->enum('table_unlimited', ['yes', 'no'])->default('no');
             $table->string('image');
+            $table->timestamps();
         });
     }
 
