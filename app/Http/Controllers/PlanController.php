@@ -35,7 +35,7 @@ class PlanController extends Controller
             'table_limit' => 'required|numeric|gt:-1',
             'restaurant_limit' => 'required|numeric|gt:-1',
             'item_limit' => 'required|numeric|gt:-1',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:300',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2000',
         ]);
 
 
@@ -70,7 +70,20 @@ class PlanController extends Controller
             $file->move(public_path('/uploads-images'), $filename);
             $request['image'] = $filename;
         }
-        Plan::create($request->all());
+
+        // DB::table('plans')->insert(
+        //     [
+        //         'title' => $request->title,
+        //         'cost' => $request->cost,
+        //         'recurring_type' => $request->recurring_type,
+        //         'table_limit' => $request->table_limit,
+        //         'restaurant_limit' => $request->restaurant_limit,
+        //         'item_limit' => $request->item_limit,
+        //         'image' => $filename,
+        //     ]
+        // );
+
+        $plan->created($request->all());
         dd($request);
         return redirect()->route('plan.index');
     }
