@@ -107,6 +107,7 @@ class SettingsController extends Controller
 
             $user->picture = $user->picture ? $user->picture : '';
         }
+        dd($request);
         $user->save();
 
         return redirect()->back()->with('success', trans('layout.message.setting_update'));
