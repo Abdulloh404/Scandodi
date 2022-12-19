@@ -71,6 +71,7 @@ class PlanController extends Controller
             $request['image'] = $filename;
         }
 
+        // Qurey bilder Insert database
         // DB::table('plans')->insert(
         //     [
         //         'title' => $request->title,
@@ -83,9 +84,15 @@ class PlanController extends Controller
         //     ]
         // );
 
-        $plan->created($request->all());
-        dd($request);
+        Plan::create($request->all());
+        DB::table('plans')->where('title', $request->title)->update(
+            [
+                'image' => $filename,
+            ]
+        );
         return redirect()->route('plan.index');
+        // dd($request);
+
     }
     public function edit(Plan $plan)
     {
