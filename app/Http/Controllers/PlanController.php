@@ -63,24 +63,15 @@ class PlanController extends Controller
             $request['restaurant_unlimited'] = 'no';
         }
 
-        // if ($request->hasfile('image')) {
-        //     $file = $request->file('image');
-        //     $extension = $file->getClientOriginalExtension();
-        //     $filename = time() . '.' . $extension;
-        //     $file->move(public_path('/uploads-images'), $filename);
-        // }
-
-        if ($request->hasFile('image')) {
+        if ($request->hasfile('image')) {
             $file = $request->file('image');
-            $file_extension = $file->getClientOriginalName();
-            $destination_path = public_path() . '/uploads-images';
-            $filename = $file_extension;
-            $request->file('image')->move($destination_path, $filename);
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move(public_path('/uploads-images'), $filename);
             $request['image'] = $filename;
         }
-
         Plan::create($request->all());
-        // dd($filename);
+        dd($request);
         return redirect()->route('plan.index');
     }
     public function edit(Plan $plan)
