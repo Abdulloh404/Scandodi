@@ -119,9 +119,7 @@
                 <div class="form-group">
                     <label class="text-label">{{ trans('layout.image') }}* 300 X 150 px </label>
                     <div class="custom-file">
-                        <input name="image"
-                            value="{{ old('image') ? old('image') : (isset($plan) ? $plan->image : '') }}"
-                            type="file" class="custom-file-input">
+                        <input name="image" {{-- value="{{ old('image') ? old('image') : (isset($plan) ? $plan->image : '') }}" --}} type="file" class="custom-file-input">
                         <label class="custom-file-label">{{ trans('layout.choose') }}</label>
                     </div>
                 </div>
