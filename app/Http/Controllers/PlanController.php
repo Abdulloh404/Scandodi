@@ -70,20 +70,6 @@ class PlanController extends Controller
             $file->move(public_path('/uploads-images'), $filename);
             $request['image'] = $filename;
         }
-
-        // Qurey bilder Insert database
-        // DB::table('plans')->insert(
-        //     [
-        //         'title' => $request->title,
-        //         'cost' => $request->cost,
-        //         'recurring_type' => $request->recurring_type,
-        //         'table_limit' => $request->table_limit,
-        //         'restaurant_limit' => $request->restaurant_limit,
-        //         'item_limit' => $request->item_limit,
-        //         'image' => $filename,
-        //     ]
-        // );
-
         Plan::create($request->all());
         DB::table('plans')->where('title', $request->title)->update(
             [
@@ -110,6 +96,7 @@ class PlanController extends Controller
             'table_limit' => 'required|numeric|gt:-1',
             'restaurant_limit' => 'required|numeric|gt:-1',
             'item_limit' => 'required|numeric|gt:-1',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2000',
         ]);
         if ($plan->id == 1) return redirect()->route('plan.index')->withErrors(['msg' => trans('layout.message.invalid_request')]);
         if ($request->is_item_unlimited == 'yes') {
@@ -135,7 +122,21 @@ class PlanController extends Controller
         } else {
             $request['restaurant_unlimited'] = 'no';
         }
+        if ($request->hasfile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move(public_path('/uploads-images'), $filename);
+            $request['image'] = $filename;
+        }
+
+
         $plan->update($request->all());
+        DB::table('plans')->where('title', $request->title)->update(
+            [
+                'image' => $filename,
+            ]
+        );
 
         return redirect()->route('plan.index')->with('success', trans('layout.message.plan_update'));
     }
