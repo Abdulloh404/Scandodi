@@ -20,7 +20,6 @@
                             <div class="divider"></div>
                             <ul class="list-unstyled li-space-lg">
                                 <li class="media">
-                                    {{-- <i class="fas fa-check"></i> --}}
                                     <div class="media-body">
                                         @if ($plan->item_unlimited == 'yes')
                                             {{ trans('layout.unlimited_items') }}
@@ -31,7 +30,6 @@
                                     </div>
                                 </li>
                                 <li class="media">
-                                    {{-- <i class="fas fa-check"></i> --}}
                                     <div class="media-body">
                                         @if ($plan->table_unlimited == 'yes')
                                             {{ trans('layout.unlimited_tables') }}
@@ -42,7 +40,6 @@
                                     </div>
                                 </li>
                                 <li class="media">
-                                    {{-- <i class="fas fa-check"></i> --}}
                                     <div class="media-body">
                                         @if ($plan->restaurant_unlimited == 'yes')
                                             {{ trans('layout.unlimited_restaurants') }}
@@ -53,7 +50,6 @@
                                     </div>
                                 </li>
                                 <li class="media">
-                                    {{-- <i class="fas fa-check"></i> --}}
                                     <div class="media-body">
                                         {{ trans('layout.unlimited_support') }}
                                     </div>
