@@ -1,4 +1,4 @@
-<style>
+{{-- <style>
     .cookie-contain {
         display: block;
     }
@@ -57,4 +57,4 @@
     function myFunction() {
         document.getElementById("cookie-contain").style.display = "none";
     }
-</script>
+</script> --}}
