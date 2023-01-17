@@ -12,7 +12,7 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class GoogleController extends Controller
 {
-        /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -21,7 +21,7 @@ class GoogleController extends Controller
     {
         return Socialite::driver('google')->redirect();
     }
-        /**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -31,20 +31,19 @@ class GoogleController extends Controller
         try {
             $user = Socialite::driver('google')->user();
             $finduser = User::where('google_id', $user->id)->first();
-            if($finduser){
+            if ($finduser) {
                 Auth::login($finduser);
                 return redirect()->intended('/email/verify');
-            }else{
+            } else {
 
-                $newUser = User::updateOrCreate(['email' => $user->email],[
-                        'name' => $user->name,
-                        'google_id'=> $user->id,
-                        'password' => $user->password
-                    ]);
+                $newUser = User::updateOrCreate(['email' => $user->email], [
+                    'name' => $user->name,
+                    'google_id' => $user->id,
+                    'password' => $user->password
+                ]);
                 Auth::login($newUser);
-                Alert::success('You has login already','Wellcome');
+                Alert::success('You has login already', 'Wellcome');
                 return redirect()->intended('/email/verify');
-
             }
         } catch (Exception $e) {
             dd($e->getMessage());

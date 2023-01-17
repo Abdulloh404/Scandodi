@@ -19,12 +19,11 @@ class FrontController extends Controller
     {
         $data['plans'] = Plan::where(['status' => 'active'])->where('id', '!=', 1)->get();
         $modules = modules_status('MultiRestaurant');
-        if ($modules){
+        if ($modules) {
             return redirect()->route('multirestaurant::index');
-        }else{
+        } else {
             return view('front.index', $data);
         }
-
     }
     public function home()
     {
@@ -46,12 +45,11 @@ class FrontController extends Controller
         $data['restaurant'] = $restaurant = Restaurant::where('slug', $slug)->where('id', $request->id)->firstOrFail();
         $authUser = auth()->user();
         if ($authUser) {
-            $data['order'] = Order::where('user_id', $authUser->id)->where('restaurant_id',$request->id)->orderBy('created_at', 'desc')->first();
+            $data['order'] = Order::where('user_id', $authUser->id)->where('restaurant_id', $request->id)->orderBy('created_at', 'desc')->first();
             $currentUrl = $slug . '?' . 'id=' . $request->id;
-            $userMenu = Menu::where('user_id', $authUser->id)->where('url', $currentUrl)->orderBy('created_at','desc')->limit(1)->get();
-            if (isset($userMenu[0]) && $userMenu[0]){
-
-            }else {
+            $userMenu = Menu::where('user_id', $authUser->id)->where('url', $currentUrl)->orderBy('created_at', 'desc')->limit(1)->get();
+            if (isset($userMenu[0]) && $userMenu[0]) {
+            } else {
                 $menu = new Menu();
                 $menu->user_id = $authUser->id;
                 $menu->url = $slug . '?' . 'id=' . $request->id;
@@ -88,10 +86,7 @@ class FrontController extends Controller
 
                 return view('restaurant.show_restaurant', $data);
             }
-
         }
-
-
     }
 
     public function setLocale($type)
@@ -121,5 +116,4 @@ class FrontController extends Controller
     {
         return view('front.terms_conditions');
     }
-
 }

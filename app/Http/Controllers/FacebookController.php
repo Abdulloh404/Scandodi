@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Exception;
 
 use App\Models\User;
@@ -27,20 +28,19 @@ class FacebookController extends Controller
         try {
             $user = Socialite::driver('facebook')->user();
             $finduser = User::where('facebook_id', $user->id)->first();
-            if($finduser){
+            if ($finduser) {
                 Auth::login($finduser);
                 return redirect()->intended('/email/verify');
-            }else{
+            } else {
 
-                $newUser = User::updateOrCreate(['email' => $user->email],[
-                        'name' => $user->name,
-                        'facebook_id'=> $user->id,
-                        'password' => $user->password
-                    ]);
+                $newUser = User::updateOrCreate(['email' => $user->email], [
+                    'name' => $user->name,
+                    'facebook_id' => $user->id,
+                    'password' => $user->password
+                ]);
                 Auth::login($newUser);
-                Alert::success('You has login already','Wellcome');
+                Alert::success('You has login already', 'Wellcome');
                 return redirect()->intended('/email/verify');
-
             }
         } catch (Exception $e) {
             dd($e->getMessage());

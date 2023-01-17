@@ -33,7 +33,7 @@ class DataCommentController extends Controller
             'Comment' => $comment
         ]);
         if ($isInsertSuccress)
-        Alert::success('STATUS UPDATE', 'Your comment has successfully!');
+            Alert::success('STATUS UPDATE', 'Your comment has successfully!');
         return back();
     }
 }
