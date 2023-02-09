@@ -42,9 +42,9 @@ Route::get('/privacy/policy', [\App\Http\Controllers\FrontController::class, 'pr
 Route::get('/terms/conditions', [\App\Http\Controllers\FrontController::class, 'terms_conditions'])->name('terms.conditions');
 
 //test
-Route::get('/testhidefrom', function () {
-    return view('hidefrom');
-})->name('hide');
+// Route::get('/testhidefrom', function () {
+//     return view('hidefrom');
+// })->name('hide');
 
 //Scandodi
 Route::get('/about', [\App\Http\Controllers\AboutController::class, 'showabout']);
